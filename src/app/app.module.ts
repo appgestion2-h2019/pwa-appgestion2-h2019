@@ -7,10 +7,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthentificationComponent } from './authentification/authentification.component';
 
+import { PictosComponent } from './pictos/pictos.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    AuthentificationComponent
+    AuthentificationComponent,
+    PictosComponent,
   ],
   imports: [
     BrowserModule,

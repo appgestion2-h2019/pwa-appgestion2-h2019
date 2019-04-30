@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PictosComponent } from './pictos/pictos.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PictosComponent
   ],
   imports: [
     BrowserModule,

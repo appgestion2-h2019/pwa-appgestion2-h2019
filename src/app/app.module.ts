@@ -8,6 +8,8 @@ import { environment } from '../environments/environment';
 import { AuthentificationComponent } from './authentification/authentification.component';
 
 import { PictosComponent } from './pictos/pictos.component';
+import { SallesComponent } from './salles/salles.component';
+import { SalleComponent } from './salles/salle/salle.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { PictosComponent } from './pictos/pictos.component';
     AppComponent,
     AuthentificationComponent,
     PictosComponent,
+    SallesComponent,
+    SalleComponent,
   ],
   imports: [
     BrowserModule,

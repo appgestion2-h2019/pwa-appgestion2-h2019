@@ -4,21 +4,17 @@
       <mat-card-title>Chicken Coops</mat-card-title>
       <mat-card-subtitle>Salles de conversation</mat-card-subtitle>
     </mat-card-header>
+
     <mat-card-content>
       <app-filtre></app-filtre>
     </mat-card-content>
+
     <mat-card-content>
       <app-options></app-options>
     </mat-card-content>
+
     <mat-card-content>
-      <mat-card-content>
-        <app-salle></app-salle>
-      </mat-card-content>
-      <mat-card-content>
-        <app-salle></app-salle>
-      </mat-card-content>
-      <mat-card-content>
-        <app-salle></app-salle>
-      </mat-card-content>
+      <app-salle *ngFor="let s of salles"></app-salle>
     </mat-card-content>
+
 </mat-card>

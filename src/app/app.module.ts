@@ -22,41 +22,22 @@ import { PopupConsultationComponent } from './salles/popup-consultation/popup-co
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-
-    AuthentificationComponent,
-    PictosComponent,
-    GoogleComponent,
-    FacebookComponent,
-    SallesComponent,
-    SalleComponent,
-    CategoriesComponent,
-    FiltreComponent,
-    PopupCreationComponent,
-    PopupModificationComponent,
-    PopupConsultationComponent,
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-
-    ListeBlancheComponent,
-    MessagerieComponent,
-    AuthentificationComponent,
-    PictosComponent,
-    GoogleComponent,
-    FacebookComponent,
-    SallesComponent,
-    SalleComponent,
-    CategoriesComponent,
-    FiltreComponent,
-    PopupCreationComponent,
-    PopupModificationComponent,
-    PopupConsultationComponent,
-  ],
+    declarations: [
+        AppComponent,
+        ListeBlancheComponent,
+        MessagerieComponent,
+        AuthentificationComponent,
+        PictosComponent,
+        GoogleComponent,
+        FacebookComponent,
+        SallesComponent,
+        SalleComponent,
+        CategoriesComponent,
+        FiltreComponent,
+        PopupCreationComponent,
+        PopupModificationComponent,
+        PopupConsultationComponent,
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -67,7 +48,7 @@ import { PopupConsultationComponent } from './salles/popup-consultation/popup-co
         MatSelectModule,
         MatButtonModule,
     ],
-  providers: [],
-  bootstrap: [AppComponent]
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

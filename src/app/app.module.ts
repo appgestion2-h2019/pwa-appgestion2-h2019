@@ -8,6 +8,7 @@ import { ListeBlancheComponent } from './liste-blanche/liste-blanche.component';
 import { MessagerieComponent } from './messagerie/messagerie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule} fr
         MatInputModule,
         MatSelectModule,
         MatButtonModule,
+        FormsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

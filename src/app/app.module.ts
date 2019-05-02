@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { AuthentificationComponent } from './authentification/authentification.component';
-import { CategoriesComponent} from './jeux/categories/categories.component';
-import { PictosComponent } from './pictos/pictos.component';
+import { ListeBlancheComponent } from './liste-blanche/liste-blanche.component';
+import { MessagerieComponent } from './messagerie/messagerie.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
 
 import { GoogleComponent } from './authentification/google/google.component';
 import { FacebookComponent } from './authentification/facebook/facebook.component';
@@ -24,6 +24,7 @@ import { PopupConsultationComponent } from './salles/popup-consultation/popup-co
 @NgModule({
   declarations: [
     AppComponent,
+
     AuthentificationComponent,
     PictosComponent,
     GoogleComponent,
@@ -41,7 +42,20 @@ import { PopupConsultationComponent } from './salles/popup-consultation/popup-co
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+
+    ListeBlancheComponent,
+    MessagerieComponent
   ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

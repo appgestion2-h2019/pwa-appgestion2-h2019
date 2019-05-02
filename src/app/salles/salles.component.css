@@ -16,3 +16,13 @@
     padding: 1%;
     background: white;
 }
+
+.salles-card {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.salles-header-image {
+    background-image: url('../../assets/ChickenCoops.png');
+    background-size: cover;
+  }

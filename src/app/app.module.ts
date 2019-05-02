@@ -7,7 +7,7 @@ import { environment } from '../environments/environment';
 import { ListeBlancheComponent } from './liste-blanche/liste-blanche.component';
 import { MessagerieComponent } from './messagerie/messagerie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatTableModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
@@ -26,6 +26,7 @@ import {FormsModule} from '@angular/forms';
         MatSelectModule,
         MatButtonModule,
         FormsModule,
+        MatTableModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

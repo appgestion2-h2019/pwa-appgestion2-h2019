@@ -1,0 +1,18 @@
+.salles_contenant {
+    width: 100%;
+    background: lightgray;
+}
+
+.salles_filtre {
+    width: 90%;
+    margin-left: 5%;
+    padding: 1%;
+    background: white;
+}
+
+.salles_liste {
+    width: 90%;
+    margin-left: 5%;
+    padding: 1%;
+    background: white;
+}

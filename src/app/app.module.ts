@@ -8,13 +8,16 @@ import { environment } from '../environments/environment';
 import { AuthentificationComponent } from './authentification/authentification.component';
 
 import { PictosComponent } from './pictos/pictos.component';
-
+import { GoogleComponent } from './authentification/google/google.component';
+import { FacebookComponent } from './authentification/facebook/facebook.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthentificationComponent,
     PictosComponent,
+    GoogleComponent,
+    FacebookComponent,
   ],
   imports: [
     BrowserModule,

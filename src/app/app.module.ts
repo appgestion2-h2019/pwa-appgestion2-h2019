@@ -26,10 +26,8 @@ import { PopupConsultationComponent } from './salles/popup-consultation/popup-co
     AppComponent,
     AuthentificationComponent,
     PictosComponent,
-
     GoogleComponent,
     FacebookComponent,
-
     SallesComponent,
     SalleComponent,
     CategoriesComponent,

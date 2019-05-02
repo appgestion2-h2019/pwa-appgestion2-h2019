@@ -10,6 +10,10 @@ import { CategoriesComponent} from './jeux/categories/categories.component';
 import { PictosComponent } from './pictos/pictos.component';
 import { SallesComponent } from './salles/salles.component';
 import { SalleComponent } from './salles/salle/salle.component';
+import { FiltreComponent } from './salles/filtre/filtre.component';
+import { PopupCreationComponent } from './salles/popup-creation/popup-creation.component';
+import { PopupModificationComponent } from './salles/popup-modification/popup-modification.component';
+import { PopupConsultationComponent } from './salles/popup-consultation/popup-consultation.component';
 
 
 @NgModule({
@@ -19,7 +23,11 @@ import { SalleComponent } from './salles/salle/salle.component';
     PictosComponent,
     SallesComponent,
     SalleComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    FiltreComponent,
+    PopupCreationComponent,
+    PopupModificationComponent,
+    PopupConsultationComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthentificationComponent } from './authentification/authentification.component';
-
+import { CategoriesComponent} from './jeux/categories/categories.component';
 import { PictosComponent } from './pictos/pictos.component';
 import { SallesComponent } from './salles/salles.component';
 import { SalleComponent } from './salles/salle/salle.component';
@@ -19,6 +19,7 @@ import { SalleComponent } from './salles/salle/salle.component';
     PictosComponent,
     SallesComponent,
     SalleComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

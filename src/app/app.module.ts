@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ListeBlancheComponent } from './liste-blanche/liste-blanche.component';
@@ -20,7 +21,7 @@ import { PopupCreationComponent } from './salles/popup-creation/popup-creation.c
 import { PopupModificationComponent } from './salles/popup-modification/popup-modification.component';
 import { PopupConsultationComponent } from './salles/popup-consultation/popup-consultation.component';
 import { OptionsComponent } from './salles/options/options.component';
-
+import { SalleService } from './salles/salle/salle.service';
 
 @NgModule({
     declarations: [
@@ -50,8 +51,9 @@ import { OptionsComponent } from './salles/options/options.component';
         MatSelectModule,
         MatButtonModule,
         MatCardModule,
+        HttpClientModule,
     ],
-    providers: [],
+    providers: [ SalleService ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

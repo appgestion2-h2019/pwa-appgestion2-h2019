@@ -14,7 +14,7 @@
     </mat-card-content>
 
     <mat-card-content>
-      <app-salle *ngFor="let s of salles"></app-salle>
+      <app-salle *ngFor="let salle of salles" [Salle]="salle"></app-salle>
     </mat-card-content>
 
 </mat-card>

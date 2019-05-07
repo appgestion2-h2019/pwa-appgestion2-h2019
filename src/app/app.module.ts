@@ -10,6 +10,7 @@ import { AuthentificationComponent } from './authentification/authentification.c
 import { PictosComponent } from './pictos/pictos.component';
 import { SallesComponent } from './salles/salles.component';
 import { SalleComponent } from './salles/salle/salle.component';
+import { FormulaireJeuComponent } from './formulaire-jeu/formulaire-jeu.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SalleComponent } from './salles/salle/salle.component';
     PictosComponent,
     SallesComponent,
     SalleComponent,
+    FormulaireJeuComponent,
   ],
   imports: [
     BrowserModule,

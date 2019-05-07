@@ -19,6 +19,7 @@ import { FiltreComponent } from './salles/filtre/filtre.component';
 import { PopupCreationComponent } from './salles/popup-creation/popup-creation.component';
 import { PopupModificationComponent } from './salles/popup-modification/popup-modification.component';
 import { PopupConsultationComponent } from './salles/popup-consultation/popup-consultation.component';
+import { CourrielComponent } from './authentification/courriel/courriel.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { PopupConsultationComponent } from './salles/popup-consultation/popup-co
         PopupCreationComponent,
         PopupModificationComponent,
         PopupConsultationComponent,
+        CourrielComponent,
     ],
     imports: [
         BrowserModule,

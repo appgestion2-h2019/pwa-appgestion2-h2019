@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Usager} from './usager';
 
 @Component({
-  selector: 'app-authentification',
-  templateUrl: './authentification.component.html',
-  styleUrls: ['./authentification.component.css']
+    selector: 'app-authentification',
+    templateUrl: './authentification.component.html',
+    styleUrls: ['./authentification.component.css']
 })
 export class AuthentificationComponent implements OnInit {
 
-  constructor() { }
+    usager: Usager = {
+        id: 1,
+        nomUsager: 'Dannick',
+        courriel: 'dannickbedard@gmail.com',
+        motdepasse: 'qwerty1234',
+        avatar: 'image',
+        admin: false,
+        actif: true,
+    };
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
 
 }

@@ -89,6 +89,7 @@ const appRoutes: Routes = [
         MatIconModule,
         MatSidenavModule,
         HttpClientModule,
+        FormsModule,
     ],
     providers: [ SalleService ],
     bootstrap: [AppComponent]

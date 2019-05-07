@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-liste-blanche',
-  templateUrl: './liste-blanche.component.html',
-  styleUrls: ['./liste-blanche.component.css']
+    selector: 'app-liste-blanche',
+    templateUrl: './liste-blanche.component.html',
+    styleUrls: ['./liste-blanche.component.css']
 })
 export class ListeBlancheComponent implements OnInit {
 
-  constructor() { }
+    // tslint:disable-next-line:ban-types
+    listeUtilisateurs: Object[] = new Array(1);
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
+
+    ngOnInit() {
+
+    }
 
 }

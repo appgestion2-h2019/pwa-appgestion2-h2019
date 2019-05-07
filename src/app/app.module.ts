@@ -22,6 +22,7 @@ import { PopupModificationComponent } from './salles/popup-modification/popup-mo
 import { PopupConsultationComponent } from './salles/popup-consultation/popup-consultation.component';
 import { OptionsComponent } from './salles/options/options.component';
 import { SalleService } from './salles/salle/salle.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -52,6 +53,7 @@ import { SalleService } from './salles/salle/salle.service';
         MatButtonModule,
         MatCardModule,
         HttpClientModule,
+        FormsModule,
     ],
     providers: [ SalleService ],
     bootstrap: [AppComponent]

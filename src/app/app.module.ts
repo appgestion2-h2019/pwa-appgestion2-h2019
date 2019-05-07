@@ -2,12 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ListeBlancheComponent } from './liste-blanche/liste-blanche.component';
 import { MessagerieComponent } from './messagerie/messagerie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatCardModule } from '@angular/material';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { CategoriesComponent} from './jeux/categories/categories.component';
 import { PictosComponent } from './pictos/pictos.component';
@@ -20,25 +21,27 @@ import { PopupCreationComponent } from './salles/popup-creation/popup-creation.c
 import { PopupModificationComponent } from './salles/popup-modification/popup-modification.component';
 import { PopupConsultationComponent } from './salles/popup-consultation/popup-consultation.component';
 import {CanvasWhiteboardModule} from 'ng2-canvas-whiteboard';
-
+import { OptionsComponent } from './salles/options/options.component';
+import { SalleService } from './salles/salle/salle.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ListeBlancheComponent,
-    MessagerieComponent,
-    AuthentificationComponent,
-    PictosComponent,
-    GoogleComponent,
-    FacebookComponent,
-    SallesComponent,
-    SalleComponent,
-    CategoriesComponent,
-    FiltreComponent,
-    PopupCreationComponent,
-    PopupModificationComponent,
-    PopupConsultationComponent,
-  ],
+    declarations: [
+        AppComponent,
+        ListeBlancheComponent,
+        MessagerieComponent,
+        AuthentificationComponent,
+        PictosComponent,
+        GoogleComponent,
+        FacebookComponent,
+        SallesComponent,
+        SalleComponent,
+        CategoriesComponent,
+        FiltreComponent,
+        PopupCreationComponent,
+        PopupModificationComponent,
+        PopupConsultationComponent,
+        OptionsComponent,
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -48,9 +51,11 @@ import {CanvasWhiteboardModule} from 'ng2-canvas-whiteboard';
         MatInputModule,
         MatSelectModule,
         MatButtonModule,
+        MatCardModule,
+        HttpClientModule,
         CanvasWhiteboardModule,
     ],
-  providers: [],
-  bootstrap: [AppComponent]
+    providers: [ SalleService ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

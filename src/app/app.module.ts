@@ -25,6 +25,8 @@ import { PopupConsultationComponent } from './salles/popup-consultation/popup-co
 import { OptionsComponent } from './salles/options/options.component';
 import { SalleService } from './salles/salle/salle.service';
 import { MotsComponent } from './jeux/mots/mots.component';
+import { DessinerComponent } from './jeux/dessiner/dessiner.component';
+import { DevinerDessinsComponent } from './jeux/deviner-dessins/deviner-dessins.component';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -60,6 +62,10 @@ const appRoutes: Routes = [
         OptionsComponent,
 
         MotsComponent,
+
+        DessinerComponent,
+
+        DevinerDessinsComponent,
     ],
     imports: [
         RouterModule.forRoot(

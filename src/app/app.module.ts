@@ -17,6 +17,7 @@ import { GoogleComponent } from './authentification/google/google.component';
 import { FacebookComponent } from './authentification/facebook/facebook.component';
 import { SallesComponent } from './salles/salles.component';
 import { SalleComponent } from './salles/salle/salle.component';
+import { FormulaireJeuComponent } from './formulaire-jeu/formulaire-jeu.component';
 import { FiltreComponent } from './salles/filtre/filtre.component';
 import { PopupCreationComponent } from './salles/popup-creation/popup-creation.component';
 import { PopupModificationComponent } from './salles/popup-modification/popup-modification.component';
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
   { path: 'salles', component: SallesComponent },
   { path: 'messagerie', component: MessagerieComponent },
   { path: 'salles/:id', component: SalleComponent }, // TODO Salle selon l'id
-  { path: 'jeux', component: SallesComponent }, // TODO Salle selon l'id
+  { path: 'jeux', component: FormulaireJeuComponent }, // TODO Salle selon l'id
   { path: '',
     redirectTo: '/accueil',
     pathMatch: 'full'
@@ -55,7 +56,7 @@ const appRoutes: Routes = [
         PopupCreationComponent,
         PopupModificationComponent,
         PopupConsultationComponent,
-
+        FormulaireJeuComponent,
         OptionsComponent,
 
         MotsComponent,

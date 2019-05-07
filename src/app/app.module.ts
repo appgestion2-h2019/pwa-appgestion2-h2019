@@ -27,6 +27,7 @@ import { SalleService } from './salles/salle/salle.service';
 import { MotsComponent } from './jeux/mots/mots.component';
 import { DessinerComponent } from './jeux/dessiner/dessiner.component';
 import { DevinerDessinsComponent } from './jeux/deviner-dessins/deviner-dessins.component';
+import { AffichageFinalComponent } from './jeux/affichage-final/affichage-final.component';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -66,6 +67,8 @@ const appRoutes: Routes = [
         DessinerComponent,
 
         DevinerDessinsComponent,
+
+        AffichageFinalComponent,
     ],
     imports: [
         RouterModule.forRoot(

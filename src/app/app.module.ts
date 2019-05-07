@@ -17,12 +17,16 @@ import { GoogleComponent } from './authentification/google/google.component';
 import { FacebookComponent } from './authentification/facebook/facebook.component';
 import { SallesComponent } from './salles/salles.component';
 import { SalleComponent } from './salles/salle/salle.component';
+import { FormulaireJeuComponent } from './formulaire-jeu/formulaire-jeu.component';
 import { FiltreComponent } from './salles/filtre/filtre.component';
 import { PopupCreationComponent } from './salles/popup-creation/popup-creation.component';
 import { PopupModificationComponent } from './salles/popup-modification/popup-modification.component';
 import { PopupConsultationComponent } from './salles/popup-consultation/popup-consultation.component';
 import { OptionsComponent } from './salles/options/options.component';
 import { SalleService } from './salles/salle/salle.service';
+import { MotsComponent } from './jeux/mots/mots.component';
+import { DessinerComponent } from './jeux/dessiner/dessiner.component';
+import { DevinerDessinsComponent } from './jeux/deviner-dessins/deviner-dessins.component';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -30,7 +34,7 @@ const appRoutes: Routes = [
   { path: 'salles', component: SallesComponent },
   { path: 'messagerie', component: MessagerieComponent },
   { path: 'salles/:id', component: SalleComponent }, // TODO Salle selon l'id
-  { path: 'jeux', component: SallesComponent }, // TODO Salle selon l'id
+  { path: 'jeux', component: FormulaireJeuComponent }, // TODO Salle selon l'id
   { path: '',
     redirectTo: '/accueil',
     pathMatch: 'full'
@@ -54,8 +58,14 @@ const appRoutes: Routes = [
         PopupCreationComponent,
         PopupModificationComponent,
         PopupConsultationComponent,
-
+        FormulaireJeuComponent,
         OptionsComponent,
+
+        MotsComponent,
+
+        DessinerComponent,
+
+        DevinerDessinsComponent,
     ],
     imports: [
         RouterModule.forRoot(

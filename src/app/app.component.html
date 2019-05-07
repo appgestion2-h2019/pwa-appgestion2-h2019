@@ -1,7 +1,26 @@
 <app-authentification></app-authentification>
 
 <app-messagerie></app-messagerie>
+<mat-toolbar color="primary">
+    <button mat-mini-fab color="primary" (click)="sidenav.toggle()" class="mat-small"><i class="material-icons">menu</i></button>
+    <button mat-button routerLink="/accueil">
+        <mat-icon aria-label="Accueil">home</mat-icon>
+    </button>
+    <button mat-button routerLink="/connexion">
+        <mat-icon aria-label="Connexion">account_box</mat-icon>
+    </button>
+    <button mat-button routerLink="/messagerie">
+        <mat-icon aria-label="Messagerie">message</mat-icon>
+    </button>
+    <button mat-button routerLink="/salles">
+        <mat-icon aria-label="Salles">meeting_room</mat-icon>
+    </button>
+    <button mat-button routerLink="/jeux">
+        <mat-icon aria-label="Jeux">videogame_asset</mat-icon>
+    </button>
+    
+</mat-toolbar>
 
-<router-outlet></router-outlet>
 
 <app-salles></app-salles>
+<router-outlet></router-outlet>

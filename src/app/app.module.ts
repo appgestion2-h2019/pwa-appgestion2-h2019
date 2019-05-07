@@ -31,7 +31,7 @@ const appRoutes: Routes = [
   { path: 'salles', component: SallesComponent },
   { path: 'messagerie', component: MessagerieComponent },
   { path: 'salles/:id', component: SalleComponent }, // TODO Salle selon l'id
-  { path: 'jeux', component: SallesComponent }, // TODO Salle selon l'id
+  { path: 'jeux', component: FormulaireJeuComponent }, // TODO Salle selon l'id
   { path: '',
     redirectTo: '/accueil',
     pathMatch: 'full'

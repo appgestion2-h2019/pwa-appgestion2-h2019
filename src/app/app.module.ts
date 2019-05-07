@@ -28,6 +28,7 @@ import { MotsComponent } from './jeux/mots/mots.component';
 import { DessinerComponent } from './jeux/dessiner/dessiner.component';
 import { DevinerDessinsComponent } from './jeux/deviner-dessins/deviner-dessins.component';
 import { AffichageFinalComponent } from './jeux/affichage-final/affichage-final.component';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },

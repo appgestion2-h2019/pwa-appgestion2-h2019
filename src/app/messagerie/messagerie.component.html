@@ -1,6 +1,13 @@
-<div class="example-container">
+<div class="barre-message">
+    <div class="messagerieButtons">
+        <button mat-stroked-button color="primary"><img src="assets/icons/baseline-keyboard-24px.svg" alt="sendButton"/>
+        </button>
+        <button mat-stroked-button color="primary"><img src="assets/icons/baseline-note-24px.svg" alt="sendButton"/>
+        </button>
+    </div>
     <mat-form-field class="sendContainer">
-        <input matInput class="line"/>
-        <button mat-raised-button color="primary" class="button">Envoyer</button>
+        <input #message matInput class="line"/>
+        <button mat-raised-button color="primary" class="button" (click)="buttonSend(message.value)"><img
+                src="assets/icons/baseline-send-24px.svg" alt="sendButton"/></button>
     </mat-form-field>
 </div>

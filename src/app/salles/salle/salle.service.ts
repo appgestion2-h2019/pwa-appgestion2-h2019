@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Salle } from '../../salle';
 import { Observable } from 'rxjs';
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +28,14 @@ export class SalleService {
    */
   obtenirSalles() : Observable<Salle[]> {
     return this.http.get<Salle[]>(this.sallesUrl);  
+  }
+
+  /**
+   * Création d'une salle de conversation.
+   * @param salle Salle à créer
+   */
+  creerSalle(salle : Salle) : Observable<Salle[]> {
+    return this.http.post<Salle[]>(this.sallesUrl, salle, httpOptions);  
   }
 
 }

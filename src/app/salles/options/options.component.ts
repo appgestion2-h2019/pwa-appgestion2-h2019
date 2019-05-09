@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { PopupCreationComponent } from '../popup-creation/popup-creation.component';
+import { SallesComponent } from '../salles.component';
 
 @Component({
   selector: 'app-options',
@@ -11,7 +12,10 @@ export class OptionsComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
+  @Input('instanceof_salles') instanceof_salles : SallesComponent;
+
   ngOnInit() {
+    console.log(this.instanceof_salles.sallesUrl);
   }
 
   /**
@@ -23,6 +27,7 @@ export class OptionsComponent implements OnInit {
     let dialogRef = this.dialog.open(PopupCreationComponent, {
       height: '85%',
       width: '75%',
+      data: { instanceof_salles: this.instanceof_salles }
     });
   }
 

@@ -14,21 +14,38 @@ export class SallesComponent implements OnInit {
   sallesUrl = "http://localhost:3000/salles/";
   salles : Salle[];
 
-  // salles = [
-  //   { _id: "1", nom: "Première salle", langue: "Français", type: { nom: "défaut" } },
-  //   { _id: "2", nom: "Deuxième salle", langue: "Français", type: { nom: "défaut" } },
-  //   { _id: "3", nom: "Troisième salle", langue: "Français", type: { nom: "défaut" } },
-  //   { _id: "4", nom: "Quatrième salle", langue: "Français", type: { nom: "défaut" } },
-  // ];
+  salle_instance = this;
+  interval: any;
 
   constructor(private salleService: SalleService) { }
 
+  /**
+   * Obtient les salles à partir du [salleService]
+   * @author Étienne Bouchard
+   */
   obtenirSalles() : void {
     this.salleService.obtenirSalles().subscribe(salles => this.salles = salles);
   }
 
+  /**
+   * Création d'une salle à partir d'un service
+   * @param salle Salle à créer
+   */
+  creerSalles(salle: Salle) : void {
+    this.salleService.creerSalle(salle).subscribe();
+  }
+
   ngOnInit() {
     this.obtenirSalles();
+
+    // Crée un Timer à chaque 2 secs d'obtenir les salles
+    this.interval = setInterval(() => { 
+      try{
+        this.obtenirSalles(); 
+      } catch {
+        console.log("Une erreur de connexion à la base de données est survenue.");
+      }
+    }, 2000);
   }
 
 }

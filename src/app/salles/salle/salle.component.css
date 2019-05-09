@@ -1,0 +1,4 @@
+.salle-card:hover {
+    background: lightblue;
+    cursor: pointer;
+}

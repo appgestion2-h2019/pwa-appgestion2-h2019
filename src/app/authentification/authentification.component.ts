@@ -10,10 +10,9 @@ export class AuthentificationComponent implements OnInit {
 
     usager: Usager = {
         id: 1,
-        nomUsager: 'Dannick',
+        nomusager: 'Dannick',
         courriel: 'dannickbedard@gmail.com',
         motdepasse: 'qwerty1234',
-        avatar: 'image',
         admin: false,
         actif: true,
     };

@@ -1,4 +1,4 @@
-<mat-card class="salles-card">
+  <mat-card>
     <mat-card-header>
       <div mat-card-avatar class="salles-header-image"></div>
       <mat-card-title>Chicken Coops</mat-card-title>
@@ -14,7 +14,8 @@
     </mat-card-content>
 
     <mat-card-content>
-      <app-salle *ngFor="let salle of salles" [Salle]="salle"></app-salle>
+        <div class="salles-scrollable">
+            <app-salle *ngFor="let salle of salles" [Salle]="salle"></app-salle>
+        </div>
     </mat-card-content>
-
 </mat-card>

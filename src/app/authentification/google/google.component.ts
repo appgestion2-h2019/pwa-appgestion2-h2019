@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare function signOut(): any;
+
 @Component({
   selector: 'app-google',
   templateUrl: './google.component.html',
@@ -10,6 +12,8 @@ export class GoogleComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+      signOut();
   }
 
 }
+

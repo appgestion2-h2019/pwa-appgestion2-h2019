@@ -1,15 +1,5 @@
-<div>
-    Pictos works!
-    <ul class="Pictos">
-        <li *ngFor="let picto of Pictos">
-            <label>id : </label><input value="{{picto.id}}" disabled>
-            <label>nom : </label><input [(ngModel)]="picto.picto" placeholder="nom">
-            <br>
-        </li>
-    </ul>
-</div>
-
-
+<app-afficher-picto></app-afficher-picto>
+<app-ajouter-picto></app-ajouter-picto>
 
 <!--<canvas-whiteboard #canvasWhiteboard-->
 <!--[drawButtonClass]="'drawButtonClass'"-->

@@ -30,6 +30,9 @@ import { DessinerComponent } from './jeux/dessiner/dessiner.component';
 import { DevinerDessinsComponent } from './jeux/deviner-dessins/deviner-dessins.component';
 import { AffichageFinalComponent } from './jeux/affichage-final/affichage-final.component';
 import {FormsModule} from '@angular/forms';
+import { AfficherPictoComponent } from './pictos/afficher-picto/afficher-picto.component';
+import { AjouterPictoComponent } from './pictos/ajouter-picto/ajouter-picto.component';
+import { TesteMessageComponent } from './pictos/teste-message/teste-message.component';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -72,6 +75,12 @@ const appRoutes: Routes = [
         DevinerDessinsComponent,
 
         AffichageFinalComponent,
+
+        AfficherPictoComponent,
+
+        AjouterPictoComponent,
+
+        TesteMessageComponent,
     ],
     imports: [
         RouterModule.forRoot(

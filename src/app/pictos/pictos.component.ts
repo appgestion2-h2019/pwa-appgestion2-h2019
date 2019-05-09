@@ -23,13 +23,7 @@ export class PictosComponent implements OnInit {
     }];
   constructor() { }
 
-  ngOnInit() {
-  }
 
-    // noinspection JSAnnotator
-    obetenirPicto(string id): void {
-    // todo modifier la ligne du dessous
-    // this.salleService.obtenirSalles().subscribe(salles => this.salles = salles);
+     ngOnInit() {
     }
-
 }

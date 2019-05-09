@@ -9,8 +9,9 @@ import { environment } from '../environments/environment';
 import { ListeBlancheComponent } from './liste-blanche/liste-blanche.component';
 import { MessagerieComponent } from './messagerie/messagerie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatCardModule, MatToolbarModule, MatIconModule, MatSidenavModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatCardModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatExpansionModule } from '@angular/material';
 import { AuthentificationComponent } from './authentification/authentification.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { CategoriesComponent} from './jeux/categories/categories.component';
 import { PictosComponent } from './pictos/pictos.component';
 import { GoogleComponent } from './authentification/google/google.component';
@@ -24,7 +25,13 @@ import { PopupModificationComponent } from './salles/popup-modification/popup-mo
 import { PopupConsultationComponent } from './salles/popup-consultation/popup-consultation.component';
 import { OptionsComponent } from './salles/options/options.component';
 import { SalleService } from './salles/salle/salle.service';
+import { JeuxService } from './jeux/jeux.service';
 import { MotsComponent } from './jeux/mots/mots.component';
+import { DessinerComponent } from './jeux/dessiner/dessiner.component';
+import { DevinerDessinsComponent } from './jeux/deviner-dessins/deviner-dessins.component';
+import { AffichageFinalComponent } from './jeux/affichage-final/affichage-final.component';
+import {FormsModule} from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -60,6 +67,12 @@ const appRoutes: Routes = [
         OptionsComponent,
 
         MotsComponent,
+
+        DessinerComponent,
+
+        DevinerDessinsComponent,
+
+        AffichageFinalComponent,
     ],
     imports: [
         RouterModule.forRoot(
@@ -74,13 +87,27 @@ const appRoutes: Routes = [
         MatInputModule,
         MatSelectModule,
         MatButtonModule,
+        MatExpansionModule,
         MatCardModule,
         MatToolbarModule,
         MatIconModule,
         MatSidenavModule,
         HttpClientModule,
+        FormsModule,
+        MatDialogModule,
+        MatGridListModule,
     ],
-    providers: [ SalleService ],
+    exports : [
+      PopupCreationComponent,
+      PopupModificationComponent,
+      PopupConsultationComponent,
+    ],
+    entryComponents: [
+      PopupCreationComponent,
+      PopupModificationComponent,
+      PopupConsultationComponent,
+    ],
+    providers: [ SalleService ,JeuxService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

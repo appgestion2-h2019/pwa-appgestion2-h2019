@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filtre.component.css']
 })
 export class FiltreComponent implements OnInit {
-
   constructor() { }
-
   ngOnInit() {
   }
-
+}
+export class ExpansionOverviewExample {
+  panelOpenState = false;
 }

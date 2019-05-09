@@ -107,7 +107,7 @@ const appRoutes: Routes = [
       PopupModificationComponent,
       PopupConsultationComponent,
     ],
-    providers: [ SalleService ], [JeuxService],
+    providers: [ SalleService ,JeuxService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

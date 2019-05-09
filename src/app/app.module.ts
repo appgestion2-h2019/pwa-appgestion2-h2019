@@ -9,7 +9,7 @@ import { environment } from '../environments/environment';
 import { ListeBlancheComponent } from './liste-blanche/liste-blanche.component';
 import { MessagerieComponent } from './messagerie/messagerie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatCardModule, MatToolbarModule, MatIconModule, MatSidenavModule } from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatCardModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatExpansionModule } from '@angular/material';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { CategoriesComponent} from './jeux/categories/categories.component';
 import { PictosComponent } from './pictos/pictos.component';
@@ -25,6 +25,11 @@ import { PopupConsultationComponent } from './salles/popup-consultation/popup-co
 import {CanvasWhiteboardModule} from 'ng2-canvas-whiteboard';
 import { OptionsComponent } from './salles/options/options.component';
 import { SalleService } from './salles/salle/salle.service';
+import { MotsComponent } from './jeux/mots/mots.component';
+import { DessinerComponent } from './jeux/dessiner/dessiner.component';
+import { DevinerDessinsComponent } from './jeux/deviner-dessins/deviner-dessins.component';
+import { AffichageFinalComponent } from './jeux/affichage-final/affichage-final.component';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -58,6 +63,14 @@ const appRoutes: Routes = [
         PopupConsultationComponent,
         FormulaireJeuComponent,
         OptionsComponent,
+
+        MotsComponent,
+
+        DessinerComponent,
+
+        DevinerDessinsComponent,
+
+        AffichageFinalComponent,
     ],
     imports: [
         RouterModule.forRoot(
@@ -72,12 +85,14 @@ const appRoutes: Routes = [
         MatInputModule,
         MatSelectModule,
         MatButtonModule,
+        MatExpansionModule,
         MatCardModule,
         MatToolbarModule,
         MatIconModule,
         MatSidenavModule,
         HttpClientModule,
         CanvasWhiteboardModule,
+        FormsModule,
     ],
     providers: [ SalleService ],
     bootstrap: [AppComponent]

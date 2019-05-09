@@ -1,7 +1,15 @@
 <form method="post" action="">
-  <label for="nom">*Catégorie: </label>
-  <input type="Text" class="form-control" id="nom" placeholder="Catégorie" maxlength="40" required name="categorie">
-  <label for="nom">*Niveau: </label>
-  <input type="Text" class="form-control" id="niveau" placeholder="Niveau" maxlength="40" required name="niveau">
+    <label for="nom">*Catégorie: </label>
+    <input type="Text" class="form-control" id="nom" placeholder="Catégorie" maxlength="40" required name="categorie">
+    <label for="nom">*Niveau: </label>
+    <input type="Text" class="form-control" id="niveau" placeholder="Niveau" maxlength="40" required name="niveau">
+    <input type="submit" class="btn btn-primary" value="Lancer!">
+    <h2>Informations sur {{categorie.id}}!</h2>
+    <div>
+        <label>id : </label>{{categorie.id}}
+    </div>
+    <div>
+        <label>nom : </label>{{categorie.titre}}
+    </div>
 </form>
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Categorie } from '../../categorie'
+import { JeuxService } from '../jeux.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+ categories: Categorie[];
+
+  constructor(private jeuxService: JeuxService) { }
+
+  getCategories(): void {
+      this.jeuxService.getCategories()
+          .subscribe(resultat => this.categories = resultat);
+  }
 
   ngOnInit() {
+    this.getCategories();
   }
 
 }

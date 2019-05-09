@@ -3,17 +3,40 @@
     Création d'une salle
   </mat-card-title>
   <mat-card-content>
-    <div>
-      <div>
-        Informations de bases
-      </div>
-      <div>
-        Component selon le type de salle.
-        Leurs paramètres seront stockés dans type : 
-      </div>
-      <div>
-        Paramètres de base
-      </div>
-    </div>
+    <form class="salles_creation_form">
+        <div class="salles_popup_creation_row">
+            <div class="salles_popup_creation_row_head">
+              <div class="salles_popup_creation_head_image">
+                  <mat-form-field>
+                      <mat-label>Image</mat-label>
+                      <select matNativeControl required>
+                        <option value="0"><img class="img-responsive" src="assets/ChickenCoops.png"></option>
+                      </select>
+                  </mat-form-field>
+              </div>
+              <div class="salles_popup_creation_head_inputs">
+                  <mat-form-field class="salles-form-full-width">
+                      <input matInput placeholder="Nom de la salle">
+                  </mat-form-field>
+                  <mat-form-field [style.fontSize]="12" class="salles-form-full-width">
+                      <mat-label>Description</mat-label>
+                      <textarea matInput
+                                cdkTextareaAutosize
+                                cdkAutosizeMinRows="5"
+                                cdkAutosizeMaxRows="5"></textarea>
+                  </mat-form-field>
+              </div>
+            </div>
+            <div class="salles_popup_creation_row_type">
+              Component selon le type de salle.
+              Leurs paramètres seront stockés dans type : 
+            </div>
+            <div class="salles_popup_creation_row_body">
+              Paramètres de base
+            </div>
+          </div>
+    </form>
   </mat-card-content>
 </mat-card>
+
+<app-listeblanche></app-listeblanche>

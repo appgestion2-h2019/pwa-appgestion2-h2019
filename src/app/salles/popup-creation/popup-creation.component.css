@@ -1,0 +1,24 @@
+.salles_popup_creation_row_head {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.salles_popup_creation_head_image {
+    display: block;
+    width: 25%;
+    padding: 1%;
+}
+
+.salles_popup_creation_head_inputs {
+    display: block;
+    width: 75%;
+    padding: 1%;
+}
+
+.salles-form-full-width {
+    width: 100%;
+}

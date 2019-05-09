@@ -9,7 +9,19 @@ import { environment } from '../environments/environment';
 import { ListeBlancheComponent } from './liste-blanche/liste-blanche.component';
 import { MessagerieComponent } from './messagerie/messagerie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatTabsModule, MatCardModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatExpansionModule } from '@angular/material';
+import {
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatExpansionModule,
+    MatPaginatorModule, MatTableModule
+} from '@angular/material';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CategoriesComponent} from './jeux/categories/categories.component';
@@ -76,8 +88,8 @@ const appRoutes: Routes = [
     ],
     imports: [
         RouterModule.forRoot(
-          appRoutes,
-          { enableTracing: true } // <-- debugging purposes only
+            appRoutes,
+            {enableTracing: true} // <-- debugging purposes only
         ),
         BrowserModule,
         AppRoutingModule,
@@ -97,6 +109,8 @@ const appRoutes: Routes = [
         MatDialogModule,
         MatGridListModule,
         MatTabsModule,
+        MatPaginatorModule,
+        MatTableModule,
     ],
     exports : [
       PopupCreationComponent,

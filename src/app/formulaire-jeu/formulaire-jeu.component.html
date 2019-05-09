@@ -1,7 +1,28 @@
 <form method="post" action="">
-  <label for="nom">*Catégorie: </label>
-  <input type="Text" class="form-control" id="nom" placeholder="Catégorie" maxlength="40" required name="categorie">
-  <label for="nom">*Niveau: </label>
-  <input type="Text" class="form-control" id="niveau" placeholder="Niveau" maxlength="40" required name="niveau">
+    <!--<label for="nom">*Catégorie: </label>-->
+    <!--<input type="Text" class="form-control" id="nom" placeholder="Catégorie" maxlength="40" required name="categorie">-->
+    <h4>Créez un jeu</h4>
+    <mat-form-field>
+        <mat-label>Catégorie</mat-label>
+        <mat-select matNativeControl [(ngModel)]="selectedCategorie" name="categorie" required>
+            <mat-option *ngFor="let cat of categorie" [value]="cat.titre">
+                {{cat.titre}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+<br>
+    <mat-form-field>
+        <mat-label>Niveau</mat-label>
+        <select matNativeControl [(ngModel)]="selectedNiveau" name="niveau" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </mat-form-field>
+<br>
+    <p> Niveau choissi: {{selectedNiveau}} </p>
+    <p> Catégorie choissi: {{selectedCategorie}} </p>
+
+    <input type="submit" class="btn btn-primary" value="Lancer!">
 </form>
 

@@ -38,6 +38,7 @@ const appRoutes: Routes = [
   { path: 'messagerie', component: MessagerieComponent },
   { path: 'salles/:id', component: SalleComponent }, // TODO Salle selon l'id
   { path: 'jeux', component: FormulaireJeuComponent }, // TODO Salle selon l'id
+  { path: 'pictos', component: PictosComponent },
   { path: '',
     redirectTo: '/accueil',
     pathMatch: 'full'

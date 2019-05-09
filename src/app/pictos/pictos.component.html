@@ -1,20 +1,33 @@
-<canvas-whiteboard #canvasWhiteboard
-                   [drawButtonClass]="'drawButtonClass'"
-                   [drawButtonText]="'Draw'"
-                   [clearButtonClass]="'clearButtonClass'"
-                   [clearButtonText]="'Clear'"
-                   [undoButtonText]="'Undo'"
-                   [undoButtonEnabled]="true"
-                   [redoButtonText]="'Redo'"
-                   [redoButtonEnabled]="true"
-                   [colorPickerEnabled]="true"
-                   [saveDataButtonEnabled]="true"
-                   [saveDataButtonText]="'Save'"
-                   [lineWidth]="5"
-                   [strokeColor]="'rgb(0,0,0)'"
-                   [shouldDownloadDrawing]="true"
-                   (onBatchUpdate)="sendBatchUpdate($event)"
-                   (onClear)="onCanvasClear()"
-                   (onUndo)="onCanvasUndo($event)"
-                   (onRedo)="onCanvasRedo($event)">
-</canvas-whiteboard>
+<div>
+    Pictos works!
+    <ul class="Pictos">
+        <li *ngFor="let picto of Pictos">
+            <label>id : </label><input value="{{picto.id}}" disabled>
+            <label>nom : </label><input [(ngModel)]="picto.picto" placeholder="nom">
+            <br>
+        </li>
+    </ul>
+</div>
+
+
+
+<!--<canvas-whiteboard #canvasWhiteboard-->
+<!--[drawButtonClass]="'drawButtonClass'"-->
+<!--[drawButtonText]="'Draw'"-->
+<!--[clearButtonClass]="'clearButtonClass'"-->
+<!--[clearButtonText]="'Clear'"-->
+<!--[undoButtonText]="'Undo'"-->
+<!--[undoButtonEnabled]="true"-->
+<!--[redoButtonText]="'Redo'"-->
+<!--[redoButtonEnabled]="false"-->
+<!--[colorPickerEnabled]="true"-->
+<!--[saveDataButtonEnabled]="true"-->
+<!--[saveDataButtonText]="'Save'"-->
+<!--[lineWidth]="5"-->
+<!--[strokeColor]="'rgb(0,0,0)'"-->
+<!--[shouldDownloadDrawing]="true"-->
+<!--(onBatchUpdate)="sendBatchUpdate($event)"-->
+<!--(onClear)="onCanvasClear()"-->
+<!--(onUndo)="onCanvasUndo($event)"-->
+<!--(onRedo)="onCanvasRedo($event)">-->
+<!--</canvas-whiteboard>-->

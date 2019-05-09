@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CanvasWhiteboardComponent} from 'ng2-canvas-whiteboard';
+import {Pictos} from '../pictos';
 
 @Component({
     selector: 'app-pictos',
@@ -8,10 +9,27 @@ import {CanvasWhiteboardComponent} from 'ng2-canvas-whiteboard';
     styleUrls: ['./pictos.component.css']
 })
 export class PictosComponent implements OnInit {
+    /**
+     * TODO: Gérer l'url en fonction des paramètres de recherche
+     */
+    pictosUrl = 'http://localhost:3000/picto/';
 
+    pictos: Pictos[] = [{
+        id: '1',
+        picto: 'picto.png'
+    }, {
+        id: '2',
+        picto: 'picto2.png'
+    }];
   constructor() { }
 
   ngOnInit() {
   }
+
+    // noinspection JSAnnotator
+    obetenirPicto(string id): void {
+    // todo modifier la ligne du dessous
+    // this.salleService.obtenirSalles().subscribe(salles => this.salles = salles);
+    }
 
 }

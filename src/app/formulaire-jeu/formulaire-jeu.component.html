@@ -5,7 +5,7 @@
     <mat-form-field>
         <mat-label>Catégorie</mat-label>
         <mat-select matNativeControl [(ngModel)]="selectedCategorie" name="categorie" required>
-            <mat-option *ngFor="let cat of categorie" [value]="cat.titre">
+            <mat-option *ngFor="let cat of categories" [value]="cat.titre">
                 {{cat.titre}}
             </mat-option>
         </mat-select>
@@ -20,9 +20,8 @@
         </select>
     </mat-form-field>
 <br>
-    <p> Niveau choissi: {{selectedNiveau}} </p>
-    <p> Catégorie choissi: {{selectedCategorie}} </p>
+    <p> Niveau choisi: {{selectedNiveau}} </p>
+    <p> Catégorie choisi: {{selectedCategorie}} </p>
 
     <input type="submit" class="btn btn-primary" value="Lancer!">
 </form>
-

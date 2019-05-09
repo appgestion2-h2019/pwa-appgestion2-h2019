@@ -25,11 +25,13 @@ import { PopupModificationComponent } from './salles/popup-modification/popup-mo
 import { PopupConsultationComponent } from './salles/popup-consultation/popup-consultation.component';
 import { OptionsComponent } from './salles/options/options.component';
 import { SalleService } from './salles/salle/salle.service';
+import { JeuxService } from './jeux/jeux.service';
 import { MotsComponent } from './jeux/mots/mots.component';
 import { DessinerComponent } from './jeux/dessiner/dessiner.component';
 import { DevinerDessinsComponent } from './jeux/deviner-dessins/deviner-dessins.component';
 import { AffichageFinalComponent } from './jeux/affichage-final/affichage-final.component';
 import {FormsModule} from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -93,18 +95,19 @@ const appRoutes: Routes = [
         HttpClientModule,
         FormsModule,
         MatDialogModule,
+        MatGridListModule,
     ],
     exports : [
       PopupCreationComponent,
       PopupModificationComponent,
       PopupConsultationComponent,
     ],
-    entryComponents: [      
+    entryComponents: [
       PopupCreationComponent,
       PopupModificationComponent,
       PopupConsultationComponent,
     ],
-    providers: [ SalleService ],
+    providers: [ SalleService ], [JeuxService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

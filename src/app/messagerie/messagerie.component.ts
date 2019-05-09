@@ -12,4 +12,8 @@ export class MessagerieComponent implements OnInit {
   ngOnInit() {
   }
 
+  public buttonSend(message) {
+    alert(message);
+  }
+
 }

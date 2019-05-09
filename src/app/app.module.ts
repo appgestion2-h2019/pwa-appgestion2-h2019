@@ -22,7 +22,8 @@ import {
     MatExpansionModule,
     MatPaginatorModule, 
     MatTableModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatCheckboxModule,
 } from '@angular/material';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -79,13 +80,9 @@ const appRoutes: Routes = [
         PopupConsultationComponent,
         FormulaireJeuComponent,
         OptionsComponent,
-
         MotsComponent,
-
         DessinerComponent,
-
         DevinerDessinsComponent,
-
         AffichageFinalComponent,
     ],
     imports: [
@@ -114,6 +111,7 @@ const appRoutes: Routes = [
         MatPaginatorModule,
         MatTableModule,
         MatSlideToggleModule,
+        MatCheckboxModule,
     ],
     exports : [
       PopupCreationComponent,

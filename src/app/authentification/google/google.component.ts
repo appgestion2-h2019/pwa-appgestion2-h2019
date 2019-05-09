@@ -12,8 +12,11 @@ export class GoogleComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-      signOut();
   }
 
+  signOut() {
+  }
 }
+
+
 

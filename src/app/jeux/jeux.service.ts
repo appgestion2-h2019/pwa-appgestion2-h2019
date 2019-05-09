@@ -7,14 +7,12 @@ const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class JeuxService {
 
   categorieUrl = 'http://localhost:3000/jeux';
-
 
   constructor(private http: HttpClient) { }
 

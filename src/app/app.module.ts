@@ -9,8 +9,9 @@ import { environment } from '../environments/environment';
 import { ListeBlancheComponent } from './liste-blanche/liste-blanche.component';
 import { MessagerieComponent } from './messagerie/messagerie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatCardModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatExpansionModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatCardModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatExpansionModule } from '@angular/material';
 import { AuthentificationComponent } from './authentification/authentification.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { CategoriesComponent} from './jeux/categories/categories.component';
 import { PictosComponent } from './pictos/pictos.component';
 import { GoogleComponent } from './authentification/google/google.component';
@@ -91,6 +92,17 @@ const appRoutes: Routes = [
         MatSidenavModule,
         HttpClientModule,
         FormsModule,
+        MatDialogModule,
+    ],
+    exports : [
+      PopupCreationComponent,
+      PopupModificationComponent,
+      PopupConsultationComponent,
+    ],
+    entryComponents: [      
+      PopupCreationComponent,
+      PopupModificationComponent,
+      PopupConsultationComponent,
     ],
     providers: [ SalleService ],
     bootstrap: [AppComponent]

@@ -9,6 +9,8 @@ export class PopupCreationComponent implements OnInit {
 
   constructor() { }
 
+  typeDeSalle = "défaut";
+
   ngOnInit() {
   }
 

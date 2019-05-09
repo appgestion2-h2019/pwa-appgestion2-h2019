@@ -30,11 +30,20 @@
                         </div>
                       </div>
                       <div class="salles_popup_creation_row_type">
-                        Component selon le type de salle.
-                        Leurs paramètres seront stockés dans type : 
+                        <hr>
+                        <div *ngIf="typeDeSalle == 'défaut'">Salle de conversation</div>
+                        <div *ngIf="typeDeSalle == 'jeux'">Component jeux</div>
+                        <hr>
                       </div>
                       <div class="salles_popup_creation_row_body">
-                        Paramètres de base
+                          <mat-form-field>
+                              <mat-label>Type de salle</mat-label>
+                              <mat-select [(value)]="typeDeSalle">
+                                <mat-option value="défaut">Défaut</mat-option>
+                                <mat-option value="jeux">Jeux</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                            <mat-slide-toggle>Slide me!</mat-slide-toggle>
                       </div>
                     </div>
               </form>

@@ -21,8 +21,8 @@ export class OptionsComponent implements OnInit {
    */
   ouvrirCreationPopup(): void {
     let dialogRef = this.dialog.open(PopupCreationComponent, {
-      height: '400px',
-      width: '900px',
+      height: '85%',
+      width: '75%',
     });
   }
 

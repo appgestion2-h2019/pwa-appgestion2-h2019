@@ -20,7 +20,9 @@ import {
     MatIconModule,
     MatSidenavModule,
     MatExpansionModule,
-    MatPaginatorModule, MatTableModule
+    MatPaginatorModule, 
+    MatTableModule,
+    MatSlideToggleModule
 } from '@angular/material';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -111,6 +113,7 @@ const appRoutes: Routes = [
         MatTabsModule,
         MatPaginatorModule,
         MatTableModule,
+        MatSlideToggleModule,
     ],
     exports : [
       PopupCreationComponent,

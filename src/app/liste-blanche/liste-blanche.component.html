@@ -1,3 +1,15 @@
-<p>
-  liste-blanche works!
-</p>
+<div id="ListeBlanche">
+    <label for="ListeBlancheInput">Nombre d'utilisateurs : </label>
+    <input id="ListeBlancheInput" [(ngModel)]="listeUtilisateurs.length" class="ListeBlancheInput" type="number"
+           min="1" max="99" value="1">
+    <table>
+        <tr>
+            <th>Poulet</th>
+        </tr>
+        <tr *ngFor="let utilisater of listeUtilisateurs">
+            <td>{{utilisater}}</td>
+        </tr>
+    </table>
+
+
+</div>

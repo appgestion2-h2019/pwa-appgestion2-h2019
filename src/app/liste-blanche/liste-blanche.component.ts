@@ -1,5 +1,7 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource, MatTable} from '@angular/material';
+import {SalleComponent} from '../salles/salle/salle.component';
+import {SallesComponent} from '../salles/salles.component';
 
 @Component({
     selector: 'app-liste-blanche',
@@ -13,10 +15,10 @@ export class ListeBlancheComponent implements OnInit {
 
     // TODO PULL LA LISTE D'UTILISATEURS
 
+    @Input('instanceof_salles') instanceOfSalles: SallesComponent;
     listeUtilisateurs: PeriodicElement[] = [];
     @Input('maxUtilisateurs') maxUtilisateurs: number;
     selectedUser: PeriodicElement;
-
     // IMPORT DE MATERIALS
     displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'action'];
     dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);

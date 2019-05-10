@@ -15,7 +15,7 @@ export class ListeBlancheComponent implements OnInit {
 
     // TODO PULL LA LISTE D'UTILISATEURS
 
-    @Input('instanceof_salles') instanceOfSalles: SallesComponent;
+    @Input('instanceof_creation') instanceOfCreation: SallesComponent;
     @Input('maxUtilisateurs') maxUtilisateurs: number;
     // listeUtilisateurs: PeriodicElement[] = [];
     
@@ -33,15 +33,15 @@ export class ListeBlancheComponent implements OnInit {
 
     onSelect(element: PeriodicElement, tableUtilsateursajoutes: MatTable<PeriodicElement>, ajouter: boolean): void {
         this.selectedUser = element;
-        if (this.instanceOfSalles.listeUtilisateurs.length < this.maxUtilisateurs && ajouter === true
-            && !this.instanceOfSalles.listeUtilisateurs.includes(this.selectedUser)) {
-            this.instanceOfSalles.listeUtilisateurs.push(this.selectedUser);
+        if (this.instanceOfCreation.listeUtilisateurs.length < this.maxUtilisateurs && ajouter === true
+            && !this.instanceOfCreation.listeUtilisateurs.includes(this.selectedUser)) {
+            this.instanceOfCreation.listeUtilisateurs.push(this.selectedUser);
         } else if (ajouter === false) {
-            const index = this.instanceOfSalles.listeUtilisateurs.indexOf(this.selectedUser);
-            this.instanceOfSalles.listeUtilisateurs.splice(index, 1);
+            const index = this.instanceOfCreation.listeUtilisateurs.indexOf(this.selectedUser);
+            this.instanceOfCreation.listeUtilisateurs.splice(index, 1);
         }
         tableUtilsateursajoutes.renderRows();
-        console.log(this.instanceOfSalles.listeUtilisateurs);
+        console.log(this.instanceOfCreation.listeUtilisateurs);
 
 
     }

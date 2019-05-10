@@ -1,6 +1,6 @@
 <div id="ListeBlanche">
 
-    <div class="instanceOfSalles.listeUtilisateurs">
+    <div class="instanceOfCreation.listeUtilisateurs">
         <mat-form-field>
             <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Trouver un utilisateur">
         </mat-form-field>
@@ -57,7 +57,7 @@
     <!--AFFICHAGE-->
     <label>Liste blanche | Utilisateurs max : {{maxUtilisateurs}}</label>
     <div class="mat-elevation-z8">
-        <table mat-table #tableUtilsateursajoutes [dataSource]="instanceOfSalles.listeUtilisateurs">
+        <table mat-table #tableUtilsateursajoutes [dataSource]="instanceOfCreation.listeUtilisateurs">
             <!-- Position Column -->
             <ng-container matColumnDef="position">
                 <th mat-header-cell *matHeaderCellDef> No.</th>

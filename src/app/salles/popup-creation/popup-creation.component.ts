@@ -14,6 +14,9 @@ export class PopupCreationComponent implements OnInit {
 
   instanceof_salles : SallesComponent;
 
+  listeUtilisateurs : any = [];
+
+
   // Variables d'initialisation des paramètres
   typeDeSalle = "défaut";
   utiliseListeBlanche = false;

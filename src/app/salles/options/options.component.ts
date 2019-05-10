@@ -14,6 +14,8 @@ export class OptionsComponent implements OnInit {
 
   @Input('instanceof_salles') instanceof_salles : SallesComponent;
 
+  instanceof_creation : this;
+
   ngOnInit() {
     console.log(this.instanceof_salles.sallesUrl);
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Salle } from '../salle';
 import { SalleService } from './salle/salle.service';
+import { ListeBlancheComponent } from '../liste-blanche/liste-blanche.component';
 
 @Component({
   selector: 'app-salles',
@@ -42,6 +43,7 @@ export class SallesComponent implements OnInit {
     this.interval = setInterval(() => { 
       try{
         this.obtenirSalles(); 
+        console.log(this.listeUtilisateurs.length);
       } catch {
         console.log("Une erreur de connexion à la base de données est survenue.");
       }

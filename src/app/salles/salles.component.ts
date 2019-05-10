@@ -13,7 +13,7 @@ export class SallesComponent implements OnInit {
    */
   sallesUrl = "http://localhost:3000/salles/";
   salles : Salle[];
-
+  listeUtilisateurs : any = [];
   salle_instance = this;
   interval: any;
 

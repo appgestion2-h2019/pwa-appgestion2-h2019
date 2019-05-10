@@ -16,8 +16,9 @@ export class ListeBlancheComponent implements OnInit {
     // TODO PULL LA LISTE D'UTILISATEURS
 
     @Input('instanceof_salles') instanceOfSalles: SallesComponent;
-    listeUtilisateurs: PeriodicElement[] = [];
     @Input('maxUtilisateurs') maxUtilisateurs: number;
+    // listeUtilisateurs: PeriodicElement[] = [];
+    
     selectedUser: PeriodicElement;
     // IMPORT DE MATERIALS
     displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'action'];
@@ -32,15 +33,15 @@ export class ListeBlancheComponent implements OnInit {
 
     onSelect(element: PeriodicElement, tableUtilsateursajoutes: MatTable<PeriodicElement>, ajouter: boolean): void {
         this.selectedUser = element;
-        if (this.listeUtilisateurs.length < this.maxUtilisateurs && ajouter === true
-            && !this.listeUtilisateurs.includes(this.selectedUser)) {
-            this.listeUtilisateurs.push(this.selectedUser);
+        if (this.instanceOfSalles.listeUtilisateurs.length < this.maxUtilisateurs && ajouter === true
+            && !this.instanceOfSalles.listeUtilisateurs.includes(this.selectedUser)) {
+            this.instanceOfSalles.listeUtilisateurs.push(this.selectedUser);
         } else if (ajouter === false) {
-            const index = this.listeUtilisateurs.indexOf(this.selectedUser);
-            this.listeUtilisateurs.splice(index, 1);
+            const index = this.instanceOfSalles.listeUtilisateurs.indexOf(this.selectedUser);
+            this.instanceOfSalles.listeUtilisateurs.splice(index, 1);
         }
         tableUtilsateursajoutes.renderRows();
-        console.log(this.listeUtilisateurs);
+        console.log(this.instanceOfSalles.listeUtilisateurs);
 
 
     }

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource, MatTable} from '@angular/material';
 
 @Component({
@@ -14,7 +14,7 @@ export class ListeBlancheComponent implements OnInit {
     // TODO PULL LA LISTE D'UTILISATEURS
 
     listeUtilisateurs: PeriodicElement[] = [];
-    maxUtilisateurs: number;
+    @Input('maxUtilisateurs') maxUtilisateurs: number;
     selectedUser: PeriodicElement;
 
     // IMPORT DE MATERIALS

@@ -55,12 +55,7 @@
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </div>
 
-    <div class="ListeUtilisateurs">
-        <mat-form-field class="ListeUtilisateurs-fullwidth">
-            <input matInput placeholder="Nombre max d'utilisateurs" [(ngModel)]="maxUtilisateurs"
-                   type="number" min="1" max="99" value="1">
-        </mat-form-field>
-    </div>
+
     <!--AFFICHAGE-->
     <label>Liste blanche | Utilisateurs max : {{maxUtilisateurs}}</label>
     <div class="mat-elevation-z8">

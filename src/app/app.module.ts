@@ -107,6 +107,10 @@ const appRoutes: Routes = [
         FormsModule,
         MatDialogModule,
         MatGridListModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatCheckboxModule,
+        MatTabsModule,
     ],
     exports : [
       PopupCreationComponent,

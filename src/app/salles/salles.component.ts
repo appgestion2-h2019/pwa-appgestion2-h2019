@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Salle } from '../salle';
 import { SalleService } from './salle/salle.service';
 import { ListeBlancheComponent } from '../liste-blanche/liste-blanche.component';
+import { MatDialog } from '@angular/material';
+import { PopupModificationComponent } from './popup-modification/popup-modification.component';
+import { PopupConsultationComponent } from './popup-consultation/popup-consultation.component';
 
 @Component({
   selector: 'app-salles',
@@ -15,10 +18,53 @@ export class SallesComponent implements OnInit {
   sallesUrl = "http://localhost:3000/salles/";
   salles : Salle[];
   listeUtilisateurs : any = [];
-  salle_instance = this;
+  salles_instance = this;
   interval: any;
 
-  constructor(private salleService: SalleService) { }
+  // Salle ouverte et rejointe dans la liste
+  salleActive : Salle;
+
+  /**
+   * TODO: Voir avec l'équipe utilisateur pour leur modèle de données
+   */
+  utilisateurActif : string = "2"; 
+
+  constructor(private salleService: SalleService, public dialog: MatDialog) { }
+
+  /**
+   * Quitte la salle active
+   * @author Étienne Bouchard
+   */
+  quitterSalle() : void {
+    this.salleActive = null;
+  }
+
+  /**
+   * Ouvre une salle lors du click sur celle-ci
+   * @author Étienne Bouchard
+   */
+  ouvrirSalle(salle : Salle) : void {
+    if (salle.proprietaire == this.utilisateurActif) {
+
+      // Popup modification
+
+      let dialogRef = this.dialog.open(PopupModificationComponent, {
+        height: '85%',
+        width: '75%',
+        data: { instanceof_salle: salle, instanceof_salles: this.salles_instance }
+      });
+
+    } else {
+      // Popup consultation
+
+      let dialogRef = this.dialog.open(PopupConsultationComponent, {
+        height: '85%',
+        width: '75%',
+        data: { instanceof_salle: salle, instanceof_salles: this.salles_instance }
+      });
+
+    }
+  }
 
   /**
    * Obtient les salles à partir du [salleService]
@@ -43,7 +89,7 @@ export class SallesComponent implements OnInit {
     this.interval = setInterval(() => { 
       try{
         this.obtenirSalles(); 
-        console.log(this.listeUtilisateurs.length);
+        // console.log(this.listeUtilisateurs.length);
       } catch {
         console.log("Une erreur de connexion à la base de données est survenue.");
       }

@@ -23,7 +23,6 @@ export class PopupCreationComponent implements OnInit {
   langue = "français";
   nomSalle = "";
   descriptionSalle = "";
-  proprietaire = "1";
 
   nouvelleSalle : Salle;
 
@@ -48,7 +47,7 @@ export class PopupCreationComponent implements OnInit {
     if (this.nomSalle != "") {
       this.nouvelleSalle.nom = this.nomSalle;
       this.nouvelleSalle.langue = this.langue;
-      this.nouvelleSalle.proprietaire = this.proprietaire;
+      this.nouvelleSalle.proprietaire = this.instanceof_salles.utilisateurActif;
       this.nouvelleSalle.description = this.descriptionSalle;
       this.instanceof_salles.creerSalles(this.nouvelleSalle);
     }

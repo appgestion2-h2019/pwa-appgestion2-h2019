@@ -27,6 +27,8 @@ export class PopupCreationComponent implements OnInit {
 
   nouvelleSalle : Salle;
 
+  instanceof_creation = this;
+
   ngOnInit() {
     // Obtention du data depuis le MAT_DIALOG_DATA. 
     // Le constructeur déclare la variable [data] depuis la constante

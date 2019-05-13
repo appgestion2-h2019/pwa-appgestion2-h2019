@@ -2,6 +2,7 @@ import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource, MatTable} from '@angular/material';
 import {SalleComponent} from '../salles/salle/salle.component';
 import {SallesComponent} from '../salles/salles.component';
+import { PopupCreationComponent } from '../salles/popup-creation/popup-creation.component';
 
 @Component({
     selector: 'app-liste-blanche',
@@ -15,7 +16,7 @@ export class ListeBlancheComponent implements OnInit {
 
     // TODO PULL LA LISTE D'UTILISATEURS
 
-    @Input('instanceof_creation') instanceOfCreation: SallesComponent;
+    @Input('instanceof_creation') instanceOfCreation: PopupCreationComponent;
     @Input('maxUtilisateurs') maxUtilisateurs: number;
     // listeUtilisateurs: PeriodicElement[] = [];
     

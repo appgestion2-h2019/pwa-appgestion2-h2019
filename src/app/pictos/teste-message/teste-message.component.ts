@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Pictos} from '../../pictos';
+import {Message} from '../message';
 
 @Component({
   selector: 'app-teste-message',
@@ -8,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class TesteMessageComponent implements OnInit {
 
   constructor() { }
+
+    message: Message = {
+        id: '1',
+        picto: 'teste',
+    };
 
   ngOnInit() {
   }

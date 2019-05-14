@@ -7,11 +7,12 @@ import {Pictos} from '../../pictos';
   styleUrls: ['./afficher-picto.component.css']
 })
 export class AfficherPictoComponent implements OnInit {
-    @Input() picto: Pictos;
+    @Input() picto: string;
 
     constructor() { }
 
   ngOnInit() {
+        console.log(this.picto);
   }
 
 }

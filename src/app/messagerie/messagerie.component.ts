@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {MessagerieService} from '../messagerie.service';
 
 @Component({
@@ -7,7 +7,7 @@ import {MessagerieService} from '../messagerie.service';
   styleUrls: ['./messagerie.component.css']
 })
 export class MessagerieComponent implements OnInit {
-  salleId = '5cd19757db118018a826b99e';
+  @Input('salleId') salleId: string;
   utilisateurId = '1';
   salle = JSON.parse('{"messages": [ { "texte": "Message texte s’il y a lieu", "picto": null, "date": "2018-09-14 12:21:37", "utilisateur_id": "1"} ] }');
   constructor(private messagerieService: MessagerieService) { }

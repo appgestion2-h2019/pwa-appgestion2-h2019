@@ -9,6 +9,9 @@ export class FiltreComponent implements OnInit {
   constructor() { }
   ngOnInit() {
   }
+  onSubmit(data: any) {
+    console.log(data);
+  }
 }
 export class ExpansionOverviewExample {
   panelOpenState = false;

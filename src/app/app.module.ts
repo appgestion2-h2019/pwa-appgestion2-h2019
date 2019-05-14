@@ -20,7 +20,7 @@ import {
     MatIconModule,
     MatSidenavModule,
     MatExpansionModule,
-    MatPaginatorModule, 
+    MatPaginatorModule,
     MatTableModule,
     MatSlideToggleModule,
     MatCheckboxModule,
@@ -48,6 +48,8 @@ import { AffichageFinalComponent } from './jeux/affichage-final/affichage-final.
 import {FormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MessagerieService} from './messagerie.service';
+import { GravatarComponent } from './authentification/gravatar/gravatar.component';
+import {UsagerService} from './authentification/usager.service';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -55,7 +57,8 @@ const appRoutes: Routes = [
   { path: 'salles', component: SallesComponent },
   { path: 'messagerie', component: MessagerieComponent },
   { path: 'salles/:id', component: SalleComponent }, // TODO Salle selon l'id
-  { path: 'jeux', component: FormulaireJeuComponent }, // TODO Salle selon l'id
+  { path: 'jeux', component: FormulaireJeuComponent },
+  { path: 'jeux', component: AffichageFinalComponent },
   { path: '',
     redirectTo: '/accueil',
     pathMatch: 'full'
@@ -85,6 +88,7 @@ const appRoutes: Routes = [
         DessinerComponent,
         DevinerDessinsComponent,
         AffichageFinalComponent,
+        GravatarComponent,
     ],
     imports: [
         RouterModule.forRoot(
@@ -124,7 +128,7 @@ const appRoutes: Routes = [
       PopupConsultationComponent,
       AffichageFinalComponent,
     ],
-    providers: [ SalleService, JeuxService, MessagerieService],
+    providers: [ SalleService, JeuxService, MessagerieService, UsagerService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

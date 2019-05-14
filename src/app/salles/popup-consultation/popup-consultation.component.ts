@@ -24,6 +24,8 @@ export class PopupConsultationComponent implements OnInit {
    */
   rejoindreSalle() : void {
     this.instanceof_salles.salleActive = this.instanceof_salle;
+
+    this.instanceof_salles.fermerPopup();
   }
 
   ngOnInit() {

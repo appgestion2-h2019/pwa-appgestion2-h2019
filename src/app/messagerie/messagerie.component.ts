@@ -1,28 +1,55 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {MessagerieService} from '../messagerie.service';
 
 @Component({
-  selector: 'app-messagerie',
-  templateUrl: './messagerie.component.html',
-  styleUrls: ['./messagerie.component.css']
+    selector: 'app-messagerie',
+    templateUrl: './messagerie.component.html',
+    styleUrls: ['./messagerie.component.css']
 })
 export class MessagerieComponent implements OnInit {
-  @Input('salleId') salleId: string;
-  utilisateurId = '1';
-  salle = JSON.parse('{"messages": [ { "texte": "Message texte s’il y a lieu", "picto": null, "date": "2018-09-14 12:21:37", "utilisateur_id": "1"} ] }');
-  constructor(private messagerieService: MessagerieService) { }
+    @Input('salleId') salleId: string;
+    utilisateurId = '2';
+    salle;
+    thread;
+    constructor(private messagerieService: MessagerieService) {
+    }
 
-  getSalle(salleId): void {
-    this.messagerieService.getSalle(this.salleId).subscribe(resultat => this.salle = resultat);
-  }
+    getSalle(): void {
+        this.messagerieService.getSalle(this.salleId).subscribe(resultat => this.updateSalle(resultat));
+    }
+    updateSalle(resultat): void {
+        this.salle = resultat;
+        if (this.salle.messages === null || this.salle.messages === undefined) {
+            alert('NULL!');
+            this.initMessages();
+        }
+    }
 
-  ngOnInit() {
-    this.getSalle(this.salleId);
-  }
+    initMessages(): void {
+        this.messagerieService.initialiseMessages(this.salleId).subscribe(resultat => this.setSalle(resultat));
+    }
+    setSalle(resultat): void {
+        if (resultat.code === 200) {
+            this.getSalle();
+        }
+    }
+    envoyerMessage(messageObjet): void {
+        this.messagerieService.envoyerMessage(messageObjet).subscribe(resultat => this.setSalle(resultat));
+    }
 
-  public buttonSend(message) {
-    alert(message);
-    alert(this.salle.nom);
-  }
+    ngOnInit() {
+        this.thread = setInterval(() => {
+            try {
+                this.getSalle();
+            } catch {
+                console.log('Une erreur de connexion à la base de données est survenue.');
+            }
+        }, 1000);
+    }
 
+    public buttonSend(message) {
+        const messageObjet = {salleId: this.salleId, texte: message.value, picto: null, utilisateur_id: this.utilisateurId};
+        this.envoyerMessage(messageObjet);
+        message.value = '';
+    }
 }

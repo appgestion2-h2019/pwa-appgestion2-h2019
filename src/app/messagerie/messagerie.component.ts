@@ -11,6 +11,7 @@ export class MessagerieComponent implements OnInit {
     utilisateurId = '2';
     salle;
     thread;
+    picto = false;
     constructor(private messagerieService: MessagerieService) {
     }
 
@@ -51,5 +52,12 @@ export class MessagerieComponent implements OnInit {
         const messageObjet = {salleId: this.salleId, texte: message.value, picto: null, utilisateur_id: this.utilisateurId};
         this.envoyerMessage(messageObjet);
         message.value = '';
+    }
+    public afficherPicto() {
+        if (this.picto) {
+            this.picto = false;
+        } else {
+            this.picto = true;
+        }
     }
 }

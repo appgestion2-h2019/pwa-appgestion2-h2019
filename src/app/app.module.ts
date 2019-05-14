@@ -48,6 +48,7 @@ import { AffichageFinalComponent } from './jeux/affichage-final/affichage-final.
 import {FormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MessagerieService} from './messagerie.service';
+import { GravatarComponent } from './authentification/gravatar/gravatar.component';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -85,6 +86,7 @@ const appRoutes: Routes = [
         DessinerComponent,
         DevinerDessinsComponent,
         AffichageFinalComponent,
+        GravatarComponent,
     ],
     imports: [
         RouterModule.forRoot(

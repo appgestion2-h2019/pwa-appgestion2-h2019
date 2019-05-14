@@ -49,6 +49,7 @@ import {FormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MessagerieService} from './messagerie.service';
 import { GravatarComponent } from './authentification/gravatar/gravatar.component';
+import {UsagerService} from './authentification/usager.service';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -127,7 +128,7 @@ const appRoutes: Routes = [
       PopupConsultationComponent,
       AffichageFinalComponent,
     ],
-    providers: [ SalleService, JeuxService, MessagerieService],
+    providers: [ SalleService, JeuxService, MessagerieService, UsagerService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { UsagerService} from '../usager.service';
-import {Usager} from '../usager';
+import { UsagerService } from '../usager.service';
 
 @Component({
   selector: 'app-gravatar',
@@ -14,7 +13,13 @@ export class GravatarComponent implements OnInit {
   constructor(private usagerService: UsagerService) { }
 
   ngOnInit() {
-    this.usagerService.getUsager(this.id).subscribe(resultat => this.avatar = resultat.avatar());
+    this.usagerService.getUsager(this.id).subscribe(resultat => {
+      if(resultat != null) {
+        this.avatar = resultat.avatar();
+      } else {
+        this.avatar = 'QUELQUE CHOSE';
+      }
+    });
   }
 
 }

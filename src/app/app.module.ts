@@ -122,6 +122,7 @@ const appRoutes: Routes = [
       PopupCreationComponent,
       PopupModificationComponent,
       PopupConsultationComponent,
+      AffichageFinalComponent,
     ],
     providers: [ SalleService, JeuxService, MessagerieService],
     bootstrap: [AppComponent]

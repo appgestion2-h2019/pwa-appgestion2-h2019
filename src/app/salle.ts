@@ -6,5 +6,5 @@ export class Salle {
   langue: string;
   proprietaire: string;
   description: string;
-  // type: SalleType;
+  type: SalleType;
 }

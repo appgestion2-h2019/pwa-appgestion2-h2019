@@ -47,6 +47,7 @@ export class PopupCreationComponent implements OnInit {
     if (this.nomSalle != "") {
       this.nouvelleSalle.nom = this.nomSalle;
       this.nouvelleSalle.langue = this.langue;
+      this.nouvelleSalle.type = { nom: this.typeDeSalle }
       this.nouvelleSalle.proprietaire = this.instanceof_salles.utilisateurActif;
       this.nouvelleSalle.description = this.descriptionSalle;
       this.instanceof_salles.creerSalles(this.nouvelleSalle);

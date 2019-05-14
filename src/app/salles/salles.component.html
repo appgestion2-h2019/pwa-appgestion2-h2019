@@ -23,9 +23,18 @@
     </mat-card>
 </div>
 <ng-template #salleOuverte>
-    <button mat-raised-button (click)="quitterSalle()">
+    <div class="salles-active-options">
+      <button mat-raised-button (click)="quitterSalle()">
         <mat-label>Quitter</mat-label>
         <mat-icon aria-label="Icône quiiter la salle">exit_to_app</mat-icon>
       </button>
+
+      <div *ngIf="salleActive.type.nom == 'jeux'">
+          <button mat-raised-button (click)="terminerPartie()">
+              <mat-label>Terminer la partie</mat-label>
+              <mat-icon aria-label="Icône pour terminer la partie">close</mat-icon>
+          </button>
+        </div>
+    </div>
     <app-messagerie></app-messagerie>
 </ng-template>

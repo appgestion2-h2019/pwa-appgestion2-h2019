@@ -14,13 +14,6 @@ export class PictosComponent implements OnInit {
      */
     pictosUrl = 'http://localhost:3000/picto/';
 
-    pictos: Pictos[] = [{
-        id: '1',
-        picto: 'picto.png'
-    }, {
-        id: '2',
-        picto: 'picto2.png'
-    }];
   constructor() { }
 
 

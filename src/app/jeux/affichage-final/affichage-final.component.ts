@@ -10,6 +10,7 @@ import { JeuxService } from '../jeux.service';
 export class AffichageFinalComponent implements OnInit {
 
   scores: Score[];
+  nouveauScore : Score;
   selectedScore: Score;
 
   constructor(private jeuxService: JeuxService) { }
@@ -23,12 +24,16 @@ export class AffichageFinalComponent implements OnInit {
      this.jeuxService.getScore()
          .subscribe(resultat => this.scores = resultat);
  }
-    // getScore(id:number): void {
-    //     this.jeuxService.getScore(id)
-    //    .subscribe(resultat => this.scores = resultat);
-    //  }
+ //Ajouter un score.
+ onAdd() {
+   this.jeuxService.addScore(this.nouveauScore).subscribe();
+ }
+
 
   ngOnInit() {
+      console.log('in ngOnInit');
+      this.nouveauScore = new Score();
+      this.nouveauScore.score =  null;
       this.getScore();
   }
 }

@@ -1,9 +1,15 @@
-<mat-card-title>Dessins</mat-card-title>
+<mat-card-title>Meilleurs scores</mat-card-title>
 <ul class="scores">
   <li *ngFor="let s of scores" (click)="onSelect(s)"[class.selected]="s === selectedScore">
-    <span class="badge">*</span> {{s.score}}
+    <span class="badge"></span> {{s.score}}
   </li>
 </ul>
-<div class="example-container">
-  <mat-card-content>test</mat-card-content>
+<div class="container">
+  <form #ajouterUnScore="ngForm" id="ajouterUnScore" (ngSubmit)="onAdd(tableScores, ajouterUnScore);">
+  <mat-form-field>
+    <input matInput placeholder="Score" >
+    <!-- <mat-error *ngIf="score.invalid && (nom.dirty || nom.touched) && nom.hasError('minlength')">Ne peut contenir que des chiffres</mat-error> -->
+    <button matSuffix  type="submit" mat-icon-button color="primary" [disabled]="!ajouterUnScore.form.valid"><i class="material-icons">Add</i></button>
+  </mat-form-field>
+  </form>
 </div>

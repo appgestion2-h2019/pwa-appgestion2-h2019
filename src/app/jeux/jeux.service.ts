@@ -17,16 +17,21 @@ export class JeuxService {
 
   constructor(private http: HttpClient) { }
 
+  //Affichage des catégories
   getCategories() : Observable<Categorie[]> {
   return this.http.get<Categorie[]>(this.jeuxUrl);
-}
+  }
 
-getScore() : Observable<Score[]> {
+  //Ajouter un score
+  addScore (score: Score): Observable<Score> {
+        return this.http.post<Score>(this.jeuxUrl + '/score', score, httpOptions);
+  }
+
+  //Affichage de tous les scores.
+  getScore() : Observable<Score[]> {
   return this.http.get<Score[]>(this.jeuxUrl);
-}
-  //
-  // getScore(id: number): Observable<Score[]> {
-  // return this.http.get<Score[]>(this.jeuxUrl + '/' + id);
-  // }
+  }
+
+
 
 }

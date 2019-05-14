@@ -56,8 +56,8 @@ const appRoutes: Routes = [
   { path: 'salles', component: SallesComponent },
   { path: 'messagerie', component: MessagerieComponent },
   { path: 'salles/:id', component: SalleComponent }, // TODO Salle selon l'id
-  { path: 'jeux', component: FormulaireJeuComponent }, 
-  { path: 'jeux/:idUsager', component: AffichageFinalComponent }, //Modification du score selon l'id de l'utilisateur ayant joué au jeu.
+  { path: 'jeux', component: FormulaireJeuComponent },
+  { path: 'jeux', component: AffichageFinalComponent },
   { path: '',
     redirectTo: '/accueil',
     pathMatch: 'full'

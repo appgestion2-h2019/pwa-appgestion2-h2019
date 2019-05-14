@@ -29,7 +29,6 @@ export class AffichageFinalComponent implements OnInit {
    this.jeuxService.addScore(this.nouveauScore).subscribe();
  }
 
-
   ngOnInit() {
       console.log('in ngOnInit');
       this.nouveauScore = new Score();

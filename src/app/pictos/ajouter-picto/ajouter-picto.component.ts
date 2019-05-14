@@ -8,16 +8,18 @@ import {CanvasWhiteboardComponent, CanvasWhiteboardService} from 'ng2-canvas-whi
 })
 export class AjouterPictoComponent implements OnInit {
     @ViewChild('canvasWhiteboard') canvasWhiteboard: CanvasWhiteboardComponent;
-    @ViewChild('CWB') CWB: CanvasWhiteboardComponent;                                                                            // todo faire une variable avec le data de generatedData
-    onclick() {
-        console.log(this.canvasWhiteboard);
-        // this.canvasWhiteboard.generateCanvasData((generatedData: string | Blob) => {
-        //     console.log(generatedData);
-        // }, 'image/png', 1);
+    @ViewChild('CWB') CWB: CanvasWhiteboardComponent;
 
-        //load un context // save le context
-        this.CWB.context = this.canvasWhiteboard.context;
-        this.CWB.drawAllShapes();
+    /**
+     *
+     * @return {CanvasWhiteboardComponent}
+     */
+    onclickSave(): CanvasWhiteboardComponent {
+        // load un context // save le context
+        // Context je le draw
+        // this.CWB.drawAllShapes();
+        console.log(this.canvasWhiteboard);
+        return this.canvasWhiteboard;
     }
   constructor(private _canvasWhiteboardService: CanvasWhiteboardService) {}
     public receiveNewMessage(newMessage: any): void {

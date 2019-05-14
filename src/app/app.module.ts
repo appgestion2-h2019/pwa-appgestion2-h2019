@@ -50,7 +50,6 @@ import {FormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AfficherPictoComponent } from './pictos/afficher-picto/afficher-picto.component';
 import { AjouterPictoComponent } from './pictos/ajouter-picto/ajouter-picto.component';
-import { TesteMessageComponent } from './pictos/teste-message/teste-message.component';
 import {MessagerieService} from './messagerie.service';
 import { GravatarComponent } from './authentification/gravatar/gravatar.component';
 import {UsagerService} from './authentification/usager.service';
@@ -94,12 +93,8 @@ const appRoutes: Routes = [
         DessinerComponent,
         DevinerDessinsComponent,
         AffichageFinalComponent,
-
         AfficherPictoComponent,
-
         AjouterPictoComponent,
-
-        TesteMessageComponent,
         GravatarComponent,
     ],
     imports: [

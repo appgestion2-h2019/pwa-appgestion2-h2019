@@ -22,6 +22,8 @@ export class SallesComponent implements OnInit {
   salles_instance = this;
   interval: any;
 
+  dialogueOuvert : any;
+
   // Salle ouverte et rejointe dans la liste
   salleActive : Salle;
 
@@ -55,6 +57,8 @@ export class SallesComponent implements OnInit {
         data: { instanceof_salle: salle, instanceof_salles: this.salles_instance }
       });
 
+      this.dialogueOuvert = dialogRef;
+
     } else {
       // Popup consultation
 
@@ -64,7 +68,17 @@ export class SallesComponent implements OnInit {
         data: { instanceof_salle: salle, instanceof_salles: this.salles_instance }
       });
 
+      this.dialogueOuvert = dialogRef;
+
     }
+  }
+
+  /**
+   * Ferme le dialog ouvert à ce moment
+   * @author Étienne Bouchard
+   */
+  fermerPopup() {
+    this.dialogueOuvert.close();
   }
 
   /**
@@ -93,6 +107,8 @@ export class SallesComponent implements OnInit {
       height: '85%',
       width: '75%'
     });
+
+    this.dialogueOuvert = dialogRef;
   }
 
   ngOnInit() {

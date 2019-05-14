@@ -1,21 +1,27 @@
 <h1>ajouter Picto work</h1>
-<canvas-whiteboard #canvasWhiteboard
-                   [drawButtonClass]="'drawButtonClass'"
-                   [drawButtonText]="'Draw'"
-                   [clearButtonClass]="'clearButtonClass'"
-                   [clearButtonText]="'Clear'"
-                   [undoButtonText]="'Undo'"
-                   [undoButtonEnabled]="true"
-                   [redoButtonText]="'Redo'"
-                   [redoButtonEnabled]="false"
-                   [colorPickerEnabled]="true"
-                   [saveDataButtonEnabled]="true"
-                   [saveDataButtonText]="'Save'"
-                   [lineWidth]="5"
-                   [strokeColor]="'rgb(0,0,0)'"
-                   [shouldDownloadDrawing]="true"
-                   (onBatchUpdate)="sendBatchUpdate($event)"
-                   (onClear)="onCanvasClear()"
-                   (onUndo)="onCanvasUndo($event)"
-                   (onRedo)="onCanvasRedo($event)">
+
+<!--<input type="button" (click)="onclick()" />-->
+
+<canvas-whiteboard
+        #canvasWhiteboard
+        [drawButtonClass]="'drawButtonClass'"
+        [drawButtonText]="'Dessiner'"
+        [clearButtonClass]="'clearButtonClass'"
+        [clearButtonText]="'nettoyer'"
+        [undoButtonText]="'Revenir'"
+        [undoButtonEnabled]="true"
+        [redoButtonText]="'Redo'"
+        [redoButtonEnabled]="false"
+        [colorPickerEnabled]="true"
+        [saveDataButtonEnabled]="true"
+        [saveDataButtonText]="'Sauvegarder'"
+        [lineWidth]="5"
+        [strokeColor]="'rgb(0,0,0)'"
+        [shouldDownloadDrawing]="true"
+        (onBatchUpdate)="sendBatchUpdate($event)"
+        (onClear)="onCanvasClear()"
+        (onUndo)="onCanvasUndo($event)"
+        (onRedo)="onCanvasRedo($event)">
 </canvas-whiteboard>
+
+

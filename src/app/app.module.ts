@@ -20,7 +20,7 @@ import {
     MatIconModule,
     MatSidenavModule,
     MatExpansionModule,
-    MatPaginatorModule, 
+    MatPaginatorModule,
     MatTableModule,
     MatSlideToggleModule,
     MatCheckboxModule,

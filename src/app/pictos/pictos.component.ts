@@ -9,9 +9,7 @@ import {Pictos} from '../pictos';
     styleUrls: ['./pictos.component.css']
 })
 export class PictosComponent implements OnInit {
-    /**
-     * TODO: Gérer l'url en fonction des paramètres de recherche
-     */
+    // TODO: Gérer l'url en fonction des paramètres de recherche
     pictosUrl = 'http://localhost:3000/picto/';
 
   constructor() { }

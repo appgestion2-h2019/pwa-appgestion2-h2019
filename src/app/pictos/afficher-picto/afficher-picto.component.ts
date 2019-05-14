@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {Pictos} from '../../pictos';
+
 
 @Component({
   selector: 'app-afficher-picto',
@@ -14,5 +15,4 @@ export class AfficherPictoComponent implements OnInit {
   ngOnInit() {
         console.log(this.picto);
   }
-
 }

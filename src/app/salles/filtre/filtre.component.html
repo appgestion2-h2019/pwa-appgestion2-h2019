@@ -3,25 +3,25 @@
     <mat-expansion-panel-header>
       Filtre
     </mat-expansion-panel-header>
-    <form>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
       <mat-form-field>
           <mat-label>Nombre minimum d'utilisateurs</mat-label>
-        <input matInput matAutosize type="number" name="min" min="0"/>
+        <input matInput matAutosize type="number" name="min" min="0" ngModel/>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Nombre maximum d'utilisateurs</mat-label>
-        <input matInput matAutosize type="number" name="max" min="1"/>
+        <input matInput matAutosize type="number" name="max" min="1" ngModel/>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Type de salle</mat-label>
-        <mat-select name='type'>
+        <mat-select name='type' ngModel>
           <mat-option value="Défaut" selected>Défaut</mat-option>
           <mat-option value="Jeux">Jeux</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Langue</mat-label>
-        <mat-select name='langue'>
+        <mat-select name='langue' ngModel>
           <mat-option value="Français" selected>Français</mat-option>
           <mat-option value="English">English</mat-option>
         </mat-select>

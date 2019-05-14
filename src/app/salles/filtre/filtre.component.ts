@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { SallesComponent } from '../salles.component';
 
 @Component({
   selector: 'app-filtre',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filtre.component.css']
 })
 export class FiltreComponent implements OnInit {
+
+  @Input('instanceof_salles') instanceof_salles : SallesComponent;
+
   constructor() { }
   ngOnInit() {
+  }
+  onSubmit(data: any) {
+    console.log(data);
   }
 }
 export class ExpansionOverviewExample {

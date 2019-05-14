@@ -5,6 +5,7 @@ import { ListeBlancheComponent } from '../liste-blanche/liste-blanche.component'
 import { MatDialog } from '@angular/material';
 import { PopupModificationComponent } from './popup-modification/popup-modification.component';
 import { PopupConsultationComponent } from './popup-consultation/popup-consultation.component';
+import { AffichageFinalComponent } from '../jeux/affichage-final/affichage-final.component';
 
 @Component({
   selector: 'app-salles',
@@ -20,6 +21,8 @@ export class SallesComponent implements OnInit {
   listeUtilisateurs : any = [];
   salles_instance = this;
   interval: any;
+
+  dialogueOuvert : any;
 
   // Salle ouverte et rejointe dans la liste
   salleActive : Salle;
@@ -54,6 +57,8 @@ export class SallesComponent implements OnInit {
         data: { instanceof_salle: salle, instanceof_salles: this.salles_instance }
       });
 
+      this.dialogueOuvert = dialogRef;
+
     } else {
       // Popup consultation
 
@@ -63,7 +68,17 @@ export class SallesComponent implements OnInit {
         data: { instanceof_salle: salle, instanceof_salles: this.salles_instance }
       });
 
+      this.dialogueOuvert = dialogRef;
+
     }
+  }
+
+  /**
+   * Ferme le dialog ouvert à ce moment
+   * @author Étienne Bouchard
+   */
+  fermerPopup() {
+    this.dialogueOuvert.close();
   }
 
   /**
@@ -80,6 +95,20 @@ export class SallesComponent implements OnInit {
    */
   creerSalles(salle: Salle) : void {
     this.salleService.creerSalle(salle).subscribe();
+  }
+
+  /**
+   * Affiche le component de fin de partie lors du clique sur le
+   * bouton "terminer partie"
+   * @author Étienne Bouchard
+   */
+  terminerPartie() : void {
+    let dialogRef = this.dialog.open(AffichageFinalComponent, {
+      height: '85%',
+      width: '75%'
+    });
+
+    this.dialogueOuvert = dialogRef;
   }
 
   ngOnInit() {

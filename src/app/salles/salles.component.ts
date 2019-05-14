@@ -86,6 +86,7 @@ export class SallesComponent implements OnInit {
    * @author Étienne Bouchard
    */
   obtenirSalles() : void {
+    this.salleService.sallesUrl = this.sallesUrl;
     this.salleService.obtenirSalles().subscribe(salles => this.salles = salles);
   }
 

@@ -9,7 +9,22 @@ import { environment } from '../environments/environment';
 import { ListeBlancheComponent } from './liste-blanche/liste-blanche.component';
 import { MessagerieComponent } from './messagerie/messagerie.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatCardModule, MatToolbarModule, MatIconModule, MatSidenavModule, MatExpansionModule } from '@angular/material';
+import {
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatExpansionModule,
+    MatPaginatorModule, 
+    MatTableModule,
+    MatSlideToggleModule,
+    MatCheckboxModule,
+} from '@angular/material';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CategoriesComponent} from './jeux/categories/categories.component';
@@ -33,9 +48,10 @@ import { DevinerDessinsComponent } from './jeux/deviner-dessins/deviner-dessins.
 import { AffichageFinalComponent } from './jeux/affichage-final/affichage-final.component';
 import {FormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { TesteMessageComponent } from './pictos/teste-message/teste-message.component';
-import { AjouterPictoComponent } from './pictos/ajouter-picto/ajouter-picto.component';
 import { AfficherPictoComponent } from './pictos/afficher-picto/afficher-picto.component';
+import { AjouterPictoComponent } from './pictos/ajouter-picto/ajouter-picto.component';
+import { TesteMessageComponent } from './pictos/teste-message/teste-message.component';
+import {MessagerieService} from './messagerie.service';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -70,13 +86,9 @@ const appRoutes: Routes = [
         PopupConsultationComponent,
         FormulaireJeuComponent,
         OptionsComponent,
-
         MotsComponent,
-
         DessinerComponent,
-
         DevinerDessinsComponent,
-
         AffichageFinalComponent,
 
         AfficherPictoComponent,
@@ -87,8 +99,8 @@ const appRoutes: Routes = [
     ],
     imports: [
         RouterModule.forRoot(
-          appRoutes,
-          { enableTracing: true } // <-- debugging purposes only
+            appRoutes,
+            {enableTracing: true} // <-- debugging purposes only
         ),
         BrowserModule,
         AppRoutingModule,
@@ -108,6 +120,10 @@ const appRoutes: Routes = [
         FormsModule,
         MatDialogModule,
         MatGridListModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatCheckboxModule,
+        MatTabsModule,
     ],
     exports : [
       PopupCreationComponent,
@@ -118,8 +134,9 @@ const appRoutes: Routes = [
       PopupCreationComponent,
       PopupModificationComponent,
       PopupConsultationComponent,
+      AffichageFinalComponent,
     ],
-    providers: [ SalleService ,JeuxService],
+    providers: [ SalleService, JeuxService, MessagerieService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -27,7 +27,11 @@
               "src/custom-theme.scss",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/login_google.js",
+              "src/assets/js/login_facebook.js",
+              "src/assets/js/login_manuel.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

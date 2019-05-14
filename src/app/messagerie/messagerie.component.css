@@ -24,3 +24,21 @@
 .messagerieButtons{
     float: right;
 }
+
+.message{
+    width: 49%;
+    margin-bottom: 40px;
+}
+
+.autres{
+    background-color: lightgray;
+    margin-right: 60% !important;
+}
+
+.utilisateur{
+    background-color: #3f5099;
+    margin-left: 60% !important;
+}
+.fenetreChat{
+    margin-bottom: 150px;
+}

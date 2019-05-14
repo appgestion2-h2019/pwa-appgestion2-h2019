@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Salle } from 'src/app/salle';
+import { SallesComponent } from '../salles.component';
 
 @Component({
   selector: 'app-salle',

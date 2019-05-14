@@ -20,7 +20,7 @@ import {
     MatIconModule,
     MatSidenavModule,
     MatExpansionModule,
-    MatPaginatorModule, 
+    MatPaginatorModule,
     MatTableModule,
     MatSlideToggleModule,
     MatCheckboxModule,
@@ -55,7 +55,8 @@ const appRoutes: Routes = [
   { path: 'salles', component: SallesComponent },
   { path: 'messagerie', component: MessagerieComponent },
   { path: 'salles/:id', component: SalleComponent }, // TODO Salle selon l'id
-  { path: 'jeux', component: FormulaireJeuComponent }, // TODO Salle selon l'id
+  { path: 'jeux', component: FormulaireJeuComponent }, 
+  { path: 'jeux/:idUsager', component: AffichageFinalComponent }, //Modification du score selon l'id de l'utilisateur ayant joué au jeu.
   { path: '',
     redirectTo: '/accueil',
     pathMatch: 'full'

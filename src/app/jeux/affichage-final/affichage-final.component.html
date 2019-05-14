@@ -1,3 +1,9 @@
-<p>
-  affichage-final works!
-</p>
+<mat-card-title>Dessins</mat-card-title>
+<ul class="scores">
+  <li *ngFor="let s of scores" (click)="onSelect(s)"[class.selected]="s === selectedScore">
+    <span class="badge">*</span> {{s.score}}
+  </li>
+</ul>
+<div class="example-container">
+  <mat-card-content>test</mat-card-content>
+</div>

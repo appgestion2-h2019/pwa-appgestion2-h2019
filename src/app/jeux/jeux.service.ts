@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Categorie } from '../categorie';
+import { Score } from '../score';
 import { Observable } from 'rxjs';
 
 const httpOptions = {
@@ -12,12 +13,20 @@ const httpOptions = {
 })
 export class JeuxService {
 
-  categorieUrl = 'http://localhost:3000/jeux';
+  jeuxUrl = 'http://localhost:3000/jeux';
 
   constructor(private http: HttpClient) { }
 
   getCategories() : Observable<Categorie[]> {
-  return this.http.get<Categorie[]>(this.categorieUrl);
+  return this.http.get<Categorie[]>(this.jeuxUrl);
 }
+
+getScore() : Observable<Score[]> {
+  return this.http.get<Score[]>(this.jeuxUrl);
+}
+  //
+  // getScore(id: number): Observable<Score[]> {
+  // return this.http.get<Score[]>(this.jeuxUrl + '/' + id);
+  // }
 
 }

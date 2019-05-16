@@ -34,12 +34,14 @@
 .autres{
     background-color: lightgray;
     margin-right: 60% !important;
+    margin-bottom: 15px !important;
     width: 40%;
 }
 
 .utilisateur{
     background-color: #3f5099;
     margin-left: 60% !important;
+    margin-bottom: 15px !important;
     width: 40%;
 }
 .fenetreChat{

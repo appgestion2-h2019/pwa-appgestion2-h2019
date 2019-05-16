@@ -11,19 +11,17 @@
     </mat-card>
 </div>
 <div class="barre-message">
+    <div *ngIf="picto" class="picto">
+        <app-ajouter-picto #canvas>{{setPicto(canvas)}}</app-ajouter-picto>
+    </div>
     <div class="messagerieButtons">
-        <button mat-stroked-button color="primary"><img src="assets/icons/baseline-keyboard-24px.svg" alt="sendButton"/>
-        </button>
         <button mat-stroked-button color="primary" (click)="afficherPicto()"><img src="assets/icons/baseline-note-24px.svg" alt="sendButton"/>
         </button>
     </div>
-    <div *ngIf="picto" class="picto">
-        <app-ajouter-picto></app-ajouter-picto>
-    </div>
+
     <mat-form-field class="sendContainer">
-        <input #message matInput class="line"/>
+        <input #message matInput class="line" (keypress)="submit($event, message)"/>
         <button mat-raised-button color="primary" class="button" (click)="buttonSend(message)"><img
                 src="assets/icons/baseline-send-24px.svg" alt="sendButton"/></button>
     </mat-form-field>
 </div>
-

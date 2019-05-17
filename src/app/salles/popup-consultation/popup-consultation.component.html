@@ -6,9 +6,11 @@
     {{ instanceof_salle.description }}
   </mat-card-content>
   <mat-card-footer>
-      <button mat-raised-button (click)="rejoindreSalle()">
-        <mat-label>Rejoindre</mat-label>
-        <mat-icon aria-label="Icône rejoindre la salle">forward</mat-icon>
-      </button>
+      <div *ngIf="!estDansListe">
+          <button mat-raised-button (click)="rejoindreSalle()">
+              <mat-label>Rejoindre</mat-label>
+              <mat-icon aria-label="Icône rejoindre la salle">forward</mat-icon>
+            </button>
+      </div>
     </mat-card-footer>
 </mat-card>

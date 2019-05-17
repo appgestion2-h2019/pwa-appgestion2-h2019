@@ -30,7 +30,7 @@ export class SallesComponent implements OnInit {
   /**
    * TODO: Voir avec l'équipe utilisateur pour leur modèle de données
    */
-  utilisateurActif : string = "2"; 
+  utilisateurActif : string = "1"; 
 
   constructor(private salleService: SalleService, public dialog: MatDialog) { }
 
@@ -62,10 +62,18 @@ export class SallesComponent implements OnInit {
     } else {
       // Popup consultation
 
+      let estDansListe = false;
+      
+      for (let i = 0; i < this.listeUtilisateurs.length; i++){
+        if (this.listeUtilisateurs[i].id == this.utilisateurActif) {
+          estDansListe = true;
+        }
+      }
+
       let dialogRef = this.dialog.open(PopupConsultationComponent, {
         height: '85%',
         width: '75%',
-        data: { instanceof_salle: salle, instanceof_salles: this.salles_instance }
+        data: { instanceof_salle: salle, instanceof_salles: this.salles_instance, estDansListe: estDansListe }
       });
 
       this.dialogueOuvert = dialogRef;
@@ -108,8 +116,6 @@ export class SallesComponent implements OnInit {
       height: '85%',
       width: '75%'
     });
-
-    this.dialogueOuvert = dialogRef;
   }
 
   ngOnInit() {

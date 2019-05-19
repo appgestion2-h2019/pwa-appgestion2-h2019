@@ -32,6 +32,16 @@
     max-height: 30em;
 }
 
+.salles-active-options {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    width: 100%;
+}
+
 /* Styling pour la toolbar */
 ::-webkit-scrollbar-button{ display: block; height: 13px; border-radius: 0px; background-color: #AAA; } 
 ::-webkit-scrollbar-button:hover{ background-color: #AAA; } 

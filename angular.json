@@ -28,7 +28,9 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/js/login_google.js"
+              "src/assets/js/login_google.js",
+              "src/assets/js/login_facebook.js",
+              "src/assets/js/login_manuel.js"
             ],
             "es5BrowserSupport": true
           },

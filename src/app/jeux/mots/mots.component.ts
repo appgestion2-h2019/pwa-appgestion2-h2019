@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Categorie} from '../../categorie';
+import { JeuxService } from '../jeux.service';
 
 @Component({
   selector: 'app-mots',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mots.component.css']
 })
 export class MotsComponent implements OnInit {
+  categories: Categorie[];
+  selectedCategorie: Categorie;
 
-  constructor() { }
+  constructor(private jeuxService: JeuxService) { }
+  onSelect(categorie: Categorie): void {
+    this.selectedCategorie = categorie;
+    console.log(this.selectedCategorie);
+  }
+  getCategories(): void {
+    this.jeuxService.getCategories()
+        .subscribe(resultat => this.categories = resultat);
+  }
 
   ngOnInit() {
+    this.getCategories();
   }
 
 }

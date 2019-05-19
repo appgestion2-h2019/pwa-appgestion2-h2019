@@ -1,3 +1,16 @@
-<p>
-  popup-consultation works!
-</p>
+<mat-card class="salles-card">
+  <mat-card-title>
+    {{ instanceof_salle.nom }}
+  </mat-card-title>
+  <mat-card-content>
+    {{ instanceof_salle.description }}
+  </mat-card-content>
+  <mat-card-footer>
+      <div *ngIf="!estDansListe">
+          <button mat-raised-button (click)="rejoindreSalle()">
+              <mat-label>Rejoindre</mat-label>
+              <mat-icon aria-label="Icône rejoindre la salle">forward</mat-icon>
+            </button>
+      </div>
+    </mat-card-footer>
+</mat-card>

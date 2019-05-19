@@ -1,19 +1,83 @@
-<mat-card class="salles-card">
-  <mat-card-title>
-    Création d'une salle
-  </mat-card-title>
-  <mat-card-content>
-    <div>
-      <div>
-        Informations de bases
-      </div>
-      <div>
-        Component selon le type de salle.
-        Leurs paramètres seront stockés dans type : 
-      </div>
-      <div>
-        Paramètres de base
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+<mat-tab-group>
+    <mat-tab label="Général">
+        <mat-card class="salles-card">
+            <mat-card-title *ngIf="nomSalle != '' else nomDefaut">
+              {{ nomSalle }}
+            </mat-card-title>
+            <ng-template #nomDefaut>
+                <mat-card-title>
+                    Création d'une salle
+                </mat-card-title>
+            </ng-template>
+            <mat-card-content>
+              <form class="salles_creation_form">
+                  <div class="salles_popup_creation_row">
+                      <div class="salles_popup_creation_row_head">
+                        <div class="salles_popup_creation_head_image">
+                            <mat-form-field>
+                                <mat-label>Image</mat-label>
+                                <select matNativeControl required>
+                                  <option value="0"><img class="img-responsive" src="assets/ChickenCoops.png"></option>
+                                </select>
+                            </mat-form-field>
+                        </div>
+                        <div class="salles_popup_creation_head_inputs">
+                            <mat-form-field class="salles-form-full-width">
+                                <input matInput placeholder="Nom de la salle" [(ngModel)]="nomSalle" [ngModelOptions]="{standalone: true}">
+                            </mat-form-field>
+                            <mat-form-field [style.fontSize]="12" class="salles-form-full-width">
+                                <mat-label>Description</mat-label>
+                                <textarea matInput cdkTextareaAutosize
+                                          cdkAutosizeMinRows="5"
+                                          cdkAutosizeMaxRows="5"  [(ngModel)]="descriptionSalle" [ngModelOptions]="{standalone: true}"></textarea>
+                            </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="salles_popup_creation_row_body">
+                          <mat-form-field>
+                              <mat-label>Type de salle</mat-label>
+                              <mat-select [(value)]="typeDeSalle">
+                                <mat-option value="défaut">Défaut</mat-option>
+                                <mat-option value="jeux">Jeux</mat-option>
+                              </mat-select>
+                          </mat-form-field>
+                          <mat-form-field>
+                              <mat-label>Langue</mat-label>
+                              <mat-select [(value)]="langue">
+                                <mat-option value="français">Français</mat-option>
+                                <mat-option value="english">English</mat-option>
+                              </mat-select>
+                          </mat-form-field>
+                          <mat-form-field>
+                              <mat-label>Utilisateurs min.</mat-label>
+                            <input matInput matAutosize type="number" name="min" min="0" [(ngModel)]="utilisateurMin" [ngModelOptions]="{standalone: true}">
+                          </mat-form-field>
+                          <mat-form-field>
+                            <mat-label>Utilisateurs max.</mat-label>
+                            <input matInput matAutosize type="number" name="max" min="1" [(ngModel)]="utilisateurMax" [ngModelOptions]="{standalone: true}">
+                          </mat-form-field>
+                          <section>
+                              <mat-checkbox [(ngModel)]="utiliseListeBlanche" [ngModelOptions]="{standalone: true}">Utiliser la liste blanche</mat-checkbox>
+                          </section>
+                      </div>
+                      <div class="salles_popup_creation_row_type">
+                          <hr>
+                          <div *ngIf="typeDeSalle == 'défaut'">Salle de conversation</div>
+                          <div *ngIf="typeDeSalle == 'jeux'"><app-formulaire-jeu></app-formulaire-jeu></div>
+                          <hr>
+                      </div>
+                    </div>
+              </form>
+            </mat-card-content>
+            <mat-card-footer>
+                <button mat-raised-button (click)="creerSalle()">
+                  <mat-label>Créer</mat-label>
+                  <mat-icon aria-label="Icône de création de salle">add</mat-icon>
+                </button>
+              </mat-card-footer>
+          </mat-card>
+    </mat-tab>
+    <mat-tab *ngIf="utiliseListeBlanche == true" label="Liste blanche">
+      <app-liste-blanche [maxUtilisateurs]="utilisateurMax" [instanceof_creation]="instanceof_creation"></app-liste-blanche>
+    </mat-tab>
+  </mat-tab-group>

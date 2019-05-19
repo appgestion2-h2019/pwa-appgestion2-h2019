@@ -1,21 +1,40 @@
-  <mat-card>
-    <mat-card-header>
-      <div mat-card-avatar class="salles-header-image"></div>
-      <mat-card-title>Chicken Coops</mat-card-title>
-      <mat-card-subtitle>Salles de conversation</mat-card-subtitle>
-    </mat-card-header>
 
-    <mat-card-content>
-      <app-filtre></app-filtre>
-    </mat-card-content>
+<div *ngIf="salleActive == null else salleOuverte">
+    <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="salles-header-image"></div>
+          <mat-card-title>Chicken Coops</mat-card-title>
+          <mat-card-subtitle>Salles de conversation</mat-card-subtitle>
+        </mat-card-header>
+    
+        <mat-card-content>
+          <app-filtre [instanceof_salles]="salles_instance"></app-filtre>
+        </mat-card-content>
+    
+        <mat-card-content>
+          <app-options [instanceof_salles]="salles_instance"></app-options>
+        </mat-card-content>
+    
+        <mat-card-content>
+            <div class="salles-scrollable">
+                <app-salle *ngFor="let salle of salles" [Salle]="salle" (click)="ouvrirSalle(salle)"></app-salle>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+<ng-template #salleOuverte>
+    <div class="salles-active-options">
+      <button mat-raised-button (click)="quitterSalle()">
+        <mat-label>Quitter</mat-label>
+        <mat-icon aria-label="Icône quiiter la salle">exit_to_app</mat-icon>
+      </button>
 
-    <mat-card-content>
-      <app-options></app-options>
-    </mat-card-content>
-
-    <mat-card-content>
-        <div class="salles-scrollable">
-            <app-salle *ngFor="let salle of salles" [Salle]="salle"></app-salle>
+      <div *ngIf="salleActive.type.nom == 'jeux'">
+          <button mat-raised-button (click)="terminerPartie()">
+              <mat-label>Terminer la partie</mat-label>
+              <mat-icon aria-label="Icône pour terminer la partie">close</mat-icon>
+          </button>
         </div>
-    </mat-card-content>
-</mat-card>
+    </div>
+    <app-messagerie [salleId]="salleActive._id"></app-messagerie>
+</ng-template>

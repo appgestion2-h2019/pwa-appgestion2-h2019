@@ -38,6 +38,7 @@ import { FiltreComponent } from './salles/filtre/filtre.component';
 import { PopupCreationComponent } from './salles/popup-creation/popup-creation.component';
 import { PopupModificationComponent } from './salles/popup-modification/popup-modification.component';
 import { PopupConsultationComponent } from './salles/popup-consultation/popup-consultation.component';
+import {CanvasWhiteboardModule} from 'ng2-canvas-whiteboard';
 import { OptionsComponent } from './salles/options/options.component';
 import { SalleService } from './salles/salle/salle.service';
 import { JeuxService } from './jeux/jeux.service';
@@ -47,6 +48,8 @@ import { DevinerDessinsComponent } from './jeux/deviner-dessins/deviner-dessins.
 import { AffichageFinalComponent } from './jeux/affichage-final/affichage-final.component';
 import {FormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { AfficherPictoComponent } from './pictos/afficher-picto/afficher-picto.component';
+import { AjouterPictoComponent } from './pictos/ajouter-picto/ajouter-picto.component';
 import {MessagerieService} from './messagerie.service';
 import { GravatarComponent } from './authentification/gravatar/gravatar.component';
 import {UsagerService} from './authentification/usager.service';
@@ -57,6 +60,8 @@ const appRoutes: Routes = [
   { path: 'salles', component: SallesComponent },
   { path: 'messagerie', component: MessagerieComponent },
   { path: 'salles/:id', component: SalleComponent }, // TODO Salle selon l'id
+  { path: 'jeux', component: FormulaireJeuComponent }, // TODO Salle selon l'id
+  { path: 'pictos', component: PictosComponent },
   { path: 'jeux', component: FormulaireJeuComponent },
   { path: 'jeux', component: AffichageFinalComponent },
   { path: '',
@@ -88,6 +93,8 @@ const appRoutes: Routes = [
         DessinerComponent,
         DevinerDessinsComponent,
         AffichageFinalComponent,
+        AfficherPictoComponent,
+        AjouterPictoComponent,
         GravatarComponent,
     ],
     imports: [
@@ -109,6 +116,7 @@ const appRoutes: Routes = [
         MatIconModule,
         MatSidenavModule,
         HttpClientModule,
+        CanvasWhiteboardModule,
         FormsModule,
         MatDialogModule,
         MatGridListModule,

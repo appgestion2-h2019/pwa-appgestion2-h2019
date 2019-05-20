@@ -2,7 +2,7 @@ import * as gravatar from 'gravatar';
 
 export class Usager {
     id: number;
-    nomusager: string;
+    nomUsager: string;
     courriel: string;
     motdepasse: string;
     admin: boolean;

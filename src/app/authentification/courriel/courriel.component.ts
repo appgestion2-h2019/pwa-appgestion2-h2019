@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @Component({
-    selector: 'app-courriel',
-    templateUrl: './courriel.component.html',
-    styleUrls: ['./courriel.component.css']
+  selector: 'app-courriel',
+  templateUrl: './courriel.component.html',
+  styleUrls: ['./courriel.component.css']
 })
 export class CourrielComponent implements OnInit {
     creationCompteForm: FormGroup;
@@ -20,7 +22,7 @@ export class CourrielComponent implements OnInit {
             confirmMotdepasse: ['', Validators.required]
         }, {
 
-         //   validator: MustMatch('motdepasse', 'confirmMotdepasse')
+            //   validator: MustMatch('motdepasse', 'confirmMotdepasse')
         });
     }
 

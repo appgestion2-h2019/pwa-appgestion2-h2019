@@ -1,25 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {Usager} from './usager';
 
+
 @Component({
     selector: 'app-authentification',
     templateUrl: './authentification.component.html',
     styleUrls: ['./authentification.component.css']
 })
+// @ts-ignore
 export class AuthentificationComponent implements OnInit {
 
-<<<<<<< HEAD
-    usager: Usager = {
-        id: 1,
-        nomusager: 'Dannick',
-        courriel: 'dannickbedard@gmail.com',
-        motdepasse: 'qwerty1234',
-        admin: false,
-        actif: true,
-    };
-=======
     usager: Usager = new Usager();
->>>>>>> a70d23ef8705e371dbb26cc786c982e0f07c0515
 
     constructor() {
         this.usager.id = 1;

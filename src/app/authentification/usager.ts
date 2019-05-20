@@ -1,7 +1,8 @@
 export class Usager {
     id: number;
-    nomUsager: string;
+    nomusager: string;
     courriel: string;
+    googlecourriel: string;
     motdepasse: string;
     avatar: string;
     admin: boolean;

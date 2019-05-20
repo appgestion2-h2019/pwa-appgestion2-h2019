@@ -32,6 +32,7 @@ import { DevinerDessinsComponent } from './jeux/deviner-dessins/deviner-dessins.
 import { AffichageFinalComponent } from './jeux/affichage-final/affichage-final.component';
 import {FormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { GoogleService } from './google.service';
 
 const appRoutes: Routes = [
   { path: 'accueil', component: AuthentificationComponent },
@@ -107,7 +108,7 @@ const appRoutes: Routes = [
       PopupModificationComponent,
       PopupConsultationComponent,
     ],
-    providers: [ SalleService ,JeuxService],
+    providers: [ SalleService, JeuxService, GoogleService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

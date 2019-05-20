@@ -4,4 +4,8 @@
   google works!
 </p>
 <button onclick="signOut()">Sign out</button>
+<li *ngFor="let usager of usager">
+  <span class="badge">{{usager.id}}</span> {{usager.nomusager}}
+</li>
+
 

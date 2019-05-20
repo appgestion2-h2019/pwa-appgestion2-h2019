@@ -4,5 +4,7 @@ export class Salle {
   _id: string;
   nom: string;
   langue: string;
-  // type: SalleType;
+  proprietaire: string;
+  description: string;
+  type: SalleType;
 }

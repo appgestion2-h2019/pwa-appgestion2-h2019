@@ -8,17 +8,15 @@ import {Usager} from './usager';
 })
 export class AuthentificationComponent implements OnInit {
 
-    usager: Usager = {
-        id: 1,
-        nomUsager: 'Dannick',
-        courriel: 'dannickbedard@gmail.com',
-        motdepasse: 'qwerty1234',
-        avatar: 'image',
-        admin: false,
-        actif: true,
-    };
+    usager: Usager = new Usager();
 
     constructor() {
+        this.usager.id = 1;
+        this.usager.nomUsager = 'Dannick';
+        this.usager.courriel = 'dannickbedard@gmail.com';
+        this.usager.motdepasse = 'qwerty1234';
+        this.usager.admin = false;
+        this.usager.actif = true;
     }
 
     ngOnInit() {

@@ -16,8 +16,12 @@ export class JeuxService {
 
   constructor(private http: HttpClient) { }
 
-  getCategories() : Observable<Categorie[]> {
-  return this.http.get<Categorie[]>(this.categorieUrl);
-}
+  getCategories(): Observable<Categorie[]> {
+    return this.http.get<Categorie[]>(this.categorieUrl);
+  }
+
+    addCategorie(categorie: Categorie): Observable<Categorie> {
+        return this.http.post<Categorie>(this.categorieUrl + '/', categorie, httpOptions);
+    }
 
 }

@@ -23,5 +23,18 @@
     <p> Niveau choisi: {{selectedNiveau}} </p>
     <p> Catégorie choisi: {{selectedCategorie}} </p>
 
-    <input type="submit" class="btn btn-primary" value="Lancer!">
 </form>
+
+
+<form #heroFormAjout="ngForm" id="categorieFormAjout" (ngSubmit)="onAdd();" >
+    <h4>Ajouter une catégorie</h4>
+    <mat-form-field class="example-quarter-width">
+        <input type="text" id="titre" name="titre"   [(ngModel)]="newCategorie.titre" matInput #nom="ngModel" placeholder="Nouvelle catégorie"  >
+        <br>
+        <button matSuffix  type="submit" mat-raised-button color="primary" >Ajouter</button>
+        <!--<mat-error *ngIf="titre.invalid && (titre.dirty || titre.touched) && nom.hasError('required')">Le nom est obligatoire.</mat-error>-->
+    </mat-form-field>
+</form>
+
+
+<!--[disabled]="!categorieFormAjout.form.valid"-->

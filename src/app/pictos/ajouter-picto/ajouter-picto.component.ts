@@ -16,12 +16,12 @@ export class AjouterPictoComponent implements OnInit {
     /**
      * @return Le picto
      */
-    onclickSave(): Pictos {
+    onclickSave(): any {
         // load un context // save le context
         // this.CWB.drawAllShapes();
         console.log(this.canvasWhiteboard);
 
-        return this.picto;
+        return this.canvasWhiteboard;
     }
 
   constructor(private _canvasWhiteboardService: CanvasWhiteboardService) {}

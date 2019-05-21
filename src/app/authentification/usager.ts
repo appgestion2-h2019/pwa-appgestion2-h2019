@@ -1,5 +1,3 @@
-import * as gravatar from 'gravatar';
-
 export class Usager {
     id: number;
     nomUsager: string;
@@ -10,11 +8,5 @@ export class Usager {
     // connectee: boolean;
 
     constructor() {
-    }
-    /**
-     * Fais une requête à Gravatar en utilisant l'adresse courriel de l'usager
-     */
-    avatar(): string {
-        return gravatar.url(this.courriel, {s: '100', r: 'pg', d: 'wavatar'}, true);
     }
 }

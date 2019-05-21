@@ -1,7 +1,7 @@
 import {Component, OnInit, Input, ViewChild, ElementRef} from '@angular/core';
 import {MessagerieService} from '../messagerie.service';
 import {AjouterPictoComponent} from '../pictos/ajouter-picto/ajouter-picto.component';
-import {delay} from 'rxjs/operators';
+import {delay, isEmpty} from 'rxjs/operators';
 
 @Component({
     selector: 'app-messagerie',
@@ -42,6 +42,7 @@ export class MessagerieComponent implements OnInit {
     }
 
     ngOnInit() {
+        alert(this.salleId);
         this.thread = setInterval(() => {
             try {
                 this.getSalle();
@@ -54,10 +55,30 @@ export class MessagerieComponent implements OnInit {
 
     public buttonSend(message) {
         this.sendingMessage = true;
-        const messageObjet = {salleId: this.salleId, texte: message.value, picto: null, utilisateur_id: this.utilisateurId};
-        this.envoyerMessage(messageObjet);
-        // alert(JSON.stringify(this.componentPicto));
-        message.value = '';
+        let cache = [];
+        let messageObjet;
+        if (this.picto) {
+            messageObjet = {salleId: this.salleId, texte: message.value, picto: JSON.stringify(this.componentPicto.onclickSave(), function(key, value) {
+                    if (typeof value === 'object' && value !== null) {
+                        if (cache.indexOf(value) !== -1) {
+                            try {
+                                return JSON.parse(JSON.stringify(value));
+                            } catch (error) {
+                                return;
+                            }
+                        }
+                        cache.push(value);
+                    }
+                    return value;
+                }), utilisateur_id: this.utilisateurId};
+            cache = null;
+        } else {
+            messageObjet = {salleId: this.salleId, texte: message.value, picto: null, utilisateur_id: this.utilisateurId};
+        }
+        if (message.value || this.picto) {
+            this.envoyerMessage(messageObjet);
+            message.value = '';
+        }
     }
     public afficherPicto() {
         if (this.picto) {

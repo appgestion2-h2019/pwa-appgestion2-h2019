@@ -13,6 +13,13 @@ export class FormulaireJeuComponent implements OnInit {
    selectedCategorie: Categorie;
     constructor(private jeuxService: JeuxService) { }
 
+    newCategorie: Categorie;
+
+    onAdd() {
+        this.jeuxService.addCategorie(this.newCategorie).subscribe();
+    }
+
+
     onSelect(categorie: Categorie): void {
           this.selectedCategorie = categorie;
           console.log(this.selectedCategorie);
@@ -25,6 +32,9 @@ export class FormulaireJeuComponent implements OnInit {
 
     ngOnInit() {
       this.getCategories();
+      this.newCategorie = new Categorie();
+      this.newCategorie.titre = '';
+
     }
 
     // categorie: Categorie[] = [

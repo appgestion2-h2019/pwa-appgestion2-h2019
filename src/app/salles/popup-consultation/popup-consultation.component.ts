@@ -13,9 +13,14 @@ export class PopupConsultationComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
+  // Instance du component Salle
   instanceof_salle : Salle;
 
+  // Instance du component Salles
   instanceof_salles : SallesComponent;
+
+  // Si l'usager est présent dans la liste Blanche de la salle
+  estDansListe : Boolean;
 
   /**
    * Assigne la salle en paramètre comme salle active
@@ -24,6 +29,7 @@ export class PopupConsultationComponent implements OnInit {
    */
   rejoindreSalle() : void {
     this.instanceof_salles.salleActive = this.instanceof_salle;
+    this.instanceof_salles.fermerPopup();
   }
 
   ngOnInit() {
@@ -31,6 +37,7 @@ export class PopupConsultationComponent implements OnInit {
     // Le constructeur déclare la variable [data] depuis la constante
     this.instanceof_salle = this.data.instanceof_salle;
     this.instanceof_salles = this.data.instanceof_salles;
+    this.estDansListe = this.data.estDansListe;
   }
 
 }

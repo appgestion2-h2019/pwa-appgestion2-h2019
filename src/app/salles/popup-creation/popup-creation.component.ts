@@ -51,6 +51,8 @@ export class PopupCreationComponent implements OnInit {
       this.nouvelleSalle.proprietaire = this.instanceof_salles.utilisateurActif;
       this.nouvelleSalle.description = this.descriptionSalle;
       this.instanceof_salles.creerSalles(this.nouvelleSalle);
+
+      this.instanceof_salles.fermerPopup();
     }
   }
 

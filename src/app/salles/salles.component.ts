@@ -22,13 +22,15 @@ export class SallesComponent implements OnInit {
   salles_instance = this;
   interval: any;
 
+  dialogueOuvert : any;
+
   // Salle ouverte et rejointe dans la liste
   salleActive : Salle;
 
   /**
    * TODO: Voir avec l'équipe utilisateur pour leur modèle de données
    */
-  utilisateurActif : string = "2"; 
+  utilisateurActif : string = "1"; 
 
   constructor(private salleService: SalleService, public dialog: MatDialog) { }
 
@@ -55,16 +57,36 @@ export class SallesComponent implements OnInit {
         data: { instanceof_salle: salle, instanceof_salles: this.salles_instance }
       });
 
+      this.dialogueOuvert = dialogRef;
+
     } else {
       // Popup consultation
+
+      let estDansListe = false;
+      
+      for (let i = 0; i < this.listeUtilisateurs.length; i++){
+        if (this.listeUtilisateurs[i].id == this.utilisateurActif) {
+          estDansListe = true;
+        }
+      }
 
       let dialogRef = this.dialog.open(PopupConsultationComponent, {
         height: '85%',
         width: '75%',
-        data: { instanceof_salle: salle, instanceof_salles: this.salles_instance }
+        data: { instanceof_salle: salle, instanceof_salles: this.salles_instance, estDansListe: estDansListe }
       });
 
+      this.dialogueOuvert = dialogRef;
+
     }
+  }
+
+  /**
+   * Ferme le dialog ouvert à ce moment
+   * @author Étienne Bouchard
+   */
+  fermerPopup() {
+    this.dialogueOuvert.close();
   }
 
   /**
@@ -72,6 +94,7 @@ export class SallesComponent implements OnInit {
    * @author Étienne Bouchard
    */
   obtenirSalles() : void {
+    this.salleService.sallesUrl = this.sallesUrl;
     this.salleService.obtenirSalles().subscribe(salles => this.salles = salles);
   }
 

@@ -1,3 +1,4 @@
+
 <canvas-whiteboard
         #canvasWhiteboard
         [drawButtonClass]="'drawButtonClass'"
@@ -9,7 +10,7 @@
         [redoButtonText]="'Redo'"
         [redoButtonEnabled]="false"
         [colorPickerEnabled]="true"
-        [saveDataButtonEnabled]="true"
+        [saveDataButtonEnabled]="false"
         [saveDataButtonText]="'Sauvegarder'"
         [lineWidth]="5"
         [strokeColor]="'rgb(0,0,0)'"
@@ -19,5 +20,4 @@
         (onUndo)="onCanvasUndo($event)"
         (onRedo)="onCanvasRedo($event)">
 </canvas-whiteboard>
-
-
+<button (click)="onclickSave()">Sauvegarder</button>

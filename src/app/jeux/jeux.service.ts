@@ -17,19 +17,24 @@ export class JeuxService {
 
   constructor(private http: HttpClient) { }
 
-  //Affichage des catégories
-  getCategories() : Observable<Categorie[]> {
+  // Affichage des catégories
+  getCategories(): Observable<Categorie[]> {
   return this.http.get<Categorie[]>(this.jeuxUrl);
   }
 
-  //Ajouter un score
-  addScore (score: Score): Observable<Score> {
+  // Ajouter un score
+  addScore(score: Score): Observable<Score> {
         return this.http.post<Score>(this.jeuxUrl +'/score', score, httpOptions);
   }
 
-  //Affichage de tous les scores.
-  getScore() : Observable<Score[]> {
+  // Affichage de tous les scores.
+  getScore(): Observable<Score[]> {
   return this.http.get<Score[]>(this.jeuxUrl);
+  }
+
+  // Ajouter un mot
+  addMot(mot: Categorie): Observable<Categorie> {
+    return this.http.post<Categorie>(this.jeuxUrl +'/mot', mot, httpOptions);
   }
 
 

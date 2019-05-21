@@ -64,7 +64,7 @@ const appRoutes: Routes = [
     {path: 'salles', component: SallesComponent},
     {path: 'messagerie', component: MessagerieComponent},
     {path: 'salles/:id', component: SalleComponent}, // TODO Salle selon l'id
-    {path: 'jeux', component: FormulaireJeuComponent}, // TODO Salle selon l'id
+    {path: 'jeux', component: MotsComponent}, // TODO Salle selon l'id
     {path: 'pictos', component: PictosComponent},
     {path: 'jeux', component: FormulaireJeuComponent},
     {path: 'jeux', component: AffichageFinalComponent},

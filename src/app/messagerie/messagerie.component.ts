@@ -11,7 +11,7 @@ import {delay} from 'rxjs/operators';
 export class MessagerieComponent implements OnInit {
     @Input('salleId') salleId: string;
     componentPicto: AjouterPictoComponent;
-    utilisateurId = '4';
+    utilisateurId = '1';
     salle;
     thread;
     picto = false;
@@ -49,7 +49,7 @@ export class MessagerieComponent implements OnInit {
             } catch {
                 console.log('Une erreur de connexion à la base de données est survenue.');
             }
-        }, 500);
+        }, 1000);
     }
 
     public buttonSend(message) {

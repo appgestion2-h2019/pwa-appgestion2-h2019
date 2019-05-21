@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Categorie } from '../../categorie'
+import { Categorie } from '../../categorie';
 import { JeuxService } from '../jeux.service';
 
 @Component({
@@ -8,9 +8,12 @@ import { JeuxService } from '../jeux.service';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
+    categories: Categorie[];
+    newCategorie: Categorie;
 
- categories: Categorie[];
-
+    onAdd() {
+        this.jeuxService.addCategorie(this.newCategorie).subscribe();
+    }
   constructor(private jeuxService: JeuxService) { }
 
   getCategories(): void {
@@ -19,7 +22,11 @@ export class CategoriesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getCategories();
+      this.newCategorie = new Categorie();
+      this.newCategorie.titre = '';
+      this.getCategories();
   }
 
 }
+
+// //////////////////////////////////////////////////////42 et 43 dans notes de cours////////////////////////////////////////////////////

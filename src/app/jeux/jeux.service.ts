@@ -17,6 +17,11 @@ export class JeuxService {
 
   constructor(private http: HttpClient) { }
 
+  // Ajout de catégories
+  addCategorie(categorie: Categorie): Observable<Categorie> {
+    return this.http.post<Categorie>(this.jeuxUrl + '/', categorie, httpOptions);
+  }
+
   // Affichage des catégories
   getCategories(): Observable<Categorie[]> {
   return this.http.get<Categorie[]>(this.jeuxUrl);
@@ -24,7 +29,7 @@ export class JeuxService {
 
   // Ajouter un score
   addScore(score: Score): Observable<Score> {
-        return this.http.post<Score>(this.jeuxUrl +'/score', score, httpOptions);
+        return this.http.post<Score>(this.jeuxUrl + '/score', score, httpOptions);
   }
 
   // Affichage de tous les scores.
@@ -34,9 +39,8 @@ export class JeuxService {
 
   // Ajouter un mot
   addMot(mot: Categorie): Observable<Categorie> {
-    return this.http.post<Categorie>(this.jeuxUrl +'/mot', mot, httpOptions);
+    return this.http.post<Categorie>(this.jeuxUrl + '/mot', mot, httpOptions);
   }
-
 
 
 }

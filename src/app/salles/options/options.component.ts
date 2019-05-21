@@ -31,6 +31,8 @@ export class OptionsComponent implements OnInit {
       width: '75%',
       data: { instanceof_salles: this.instanceof_salles }
     });
+
+    this.instanceof_salles.dialogueOuvert = dialogRef;
   }
 
 }

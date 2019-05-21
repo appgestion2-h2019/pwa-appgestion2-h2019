@@ -11,6 +11,7 @@ export class AffichageFinalComponent implements OnInit {
 
   scores: Score[];
   nouveauScore : Score;
+  monScore : number;
   selectedScore: Score;
 
   constructor(private jeuxService: JeuxService) { }
@@ -26,13 +27,14 @@ export class AffichageFinalComponent implements OnInit {
  }
  //Ajouter un score.
  onAdd() {
+   this.nouveauScore.score = this.monScore;
    this.jeuxService.addScore(this.nouveauScore).subscribe();
+   this.getScore();
  }
 
   ngOnInit() {
       console.log('in ngOnInit');
       this.nouveauScore = new Score();
-      this.nouveauScore.score =  null;
       this.getScore();
   }
 }

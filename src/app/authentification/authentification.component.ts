@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {Usager} from './usager';
 
+
 @Component({
     selector: 'app-authentification',
     templateUrl: './authentification.component.html',
     styleUrls: ['./authentification.component.css']
 })
+// @ts-ignore
 export class AuthentificationComponent implements OnInit {
 
     usager: Usager = new Usager();

@@ -6,15 +6,13 @@ import {CourrielService} from "../../courriel.service";
 import {Usager} from "../usager";
 
 @Component({
-    selector: 'app-courriel',
-    templateUrl: './courriel.component.html',
-    styleUrls: ['./courriel.component.css']
+    selector: 'app-connexion',
+    templateUrl: './connexion.component.html',
+    styleUrls: ['./connexion.component.css']
 })
-export class CourrielComponent implements OnInit {
-    creationCompteForm: FormGroup;
+export class ConnexionComponent implements OnInit {
+    connexionForm: FormGroup;
     submitted = false;
-
-    // usagerText = String;
     usager: Usager[];
 
     constructor(private formBuilder: FormBuilder, private courrielService: CourrielService) {
@@ -25,32 +23,24 @@ export class CourrielComponent implements OnInit {
     }
 
     ngOnInit() {
-
-
-        this.creationCompteForm = this.formBuilder.group({
-            nomusager: ['', [Validators.required]],
+        this.connexionForm = this.formBuilder.group({
             courriel: ['', [Validators.required, Validators.email]],
             motdepasse: ['', [Validators.required, Validators.minLength(6)]],
-            confirmMotdepasse: ['', Validators.required]
-        }, {
-            //todo Trouver comment fontionne le MustMatch
-
-            // validator: MustMatch('motdepasse', 'confirmMotdepasse')
         });
     }
 
     get f() {
-        return this.creationCompteForm.controls;
+        return this.connexionForm.controls;
     }
 
     onSubmit() {
         this.submitted = true;
 
-        if (this.creationCompteForm.invalid) { // Si le formulaire n'est pas valide
+        if (this.connexionForm.invalid) { // Si le formulaire n'est pas valide
             return;
         } else {
-            alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.creationCompteForm.value))
+            alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.connexionForm.value))
         }
     }
-}
 
+}

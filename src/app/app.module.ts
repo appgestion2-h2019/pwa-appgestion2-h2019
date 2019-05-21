@@ -53,8 +53,10 @@ import {AjouterPictoComponent} from './pictos/ajouter-picto/ajouter-picto.compon
 import {MessagerieService} from './messagerie.service';
 import {GravatarComponent} from './authentification/gravatar/gravatar.component';
 import {UsagerService} from './authentification/usager.service';
-import { CourrielComponent } from './authentification/courriel/courriel.component';
-import {ReactiveFormsModule } from '@angular/forms';
+import {CourrielComponent} from './authentification/courriel/courriel.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {CourrielService} from "./courriel.service";
+import { ConnexionComponent } from './authentification/connexion/connexion.component';
 
 const appRoutes: Routes = [
     {path: 'accueil', component: AuthentificationComponent},
@@ -74,9 +76,6 @@ const appRoutes: Routes = [
     /*{ path: '**', component: PageNotFoundComponent }*/
 ];
 
-// @ts-ignore
-// @ts-ignore
-// @ts-ignore
 @NgModule({
     declarations: [
         AppComponent,
@@ -103,6 +102,7 @@ const appRoutes: Routes = [
         AjouterPictoComponent,
         GravatarComponent,
         CourrielComponent,
+        ConnexionComponent,
     ],
     imports: [
         RouterModule.forRoot(
@@ -144,7 +144,7 @@ const appRoutes: Routes = [
         PopupConsultationComponent,
         AffichageFinalComponent,
     ],
-    providers: [SalleService, JeuxService, MessagerieService, UsagerService],
+    providers: [SalleService, JeuxService, MessagerieService, UsagerService, CourrielService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

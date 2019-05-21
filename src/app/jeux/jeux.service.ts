@@ -48,4 +48,5 @@ export class JeuxService {
     return this.http.delete<Categorie>(url, httpOptions);
   }
 
+
 }

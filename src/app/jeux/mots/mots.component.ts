@@ -24,7 +24,6 @@ export class MotsComponent implements OnInit {
     this.jeuxService.deleteCategorie(categorie)
         .subscribe(result => this.categories = this.categories.filter(h => h !== categorie));
   }
-
   ngOnInit() {
     this.getCategories();
   }

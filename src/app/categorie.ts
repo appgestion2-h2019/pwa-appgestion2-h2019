@@ -1,5 +1,5 @@
 export class Categorie {
-    id: number;
+    _id: number;
     titre: string;
     mot: [{nom: string}, {niveau: number}];
 }

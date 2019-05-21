@@ -42,7 +42,7 @@ export class JeuxService {
     return this.http.post<Categorie>(this.jeuxUrl + '/mot', mot, httpOptions);
   }
   deleteCategorie(categorie: Categorie | number): Observable<Categorie> {
-    const id = typeof categorie === 'number' ? categorie : categorie.id;
+    const id = typeof categorie === 'number' ? categorie : categorie._id;
     const url = `${this.jeuxUrl}/${id}`;   // ajouter l'id à l'URL de base
 
     return this.http.delete<Categorie>(url, httpOptions);

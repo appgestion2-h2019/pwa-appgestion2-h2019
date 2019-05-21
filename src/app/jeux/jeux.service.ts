@@ -23,7 +23,9 @@ export class JeuxService {
   }
 
   //Ajouter un score
+
   addScore (score: Score): Observable<Score> {
+      console.log(score.score);
         return this.http.post<Score>(this.jeuxUrl +'/score', score, httpOptions);
   }
 

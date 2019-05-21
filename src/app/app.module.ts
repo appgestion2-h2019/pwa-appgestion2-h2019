@@ -124,6 +124,7 @@ const appRoutes: Routes = [
         MatTableModule,
         MatCheckboxModule,
         MatTabsModule,
+
     ],
     exports : [
       PopupCreationComponent,

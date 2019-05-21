@@ -1,14 +1,28 @@
 <mat-card-title>Meilleurs scores</mat-card-title>
 <ul class="scores">
-  <li *ngFor="let s of scores" (click)="onSelect(s)"[class.selected]="s === selectedScore">
-    <span class="badge"></span> {{s.score}}
-  </li>
+    <!-- Tableau d'affiche pour les meilleurs scores avec le material -> Mat Table de Angular. -->
+    <table>
+      <thead>
+        <tr>
+          <th> Usagers</th>
+          <th> Score </th>
+          <th> Partager <th>
+        </tr>
+      </thead>
+      <tbody>
+          <!-- //Rajouter -> (click)="onSelect(s) [class.selected]="s === selectedScore" après le ngFor pour avoir le choix de sélectionner. -->
+        <tr *ngFor="let s of scores">
+          <td>{{s.usager_id}}</td>
+          <td>{{s.score}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <span class="badge"></span> {{s.score}} -->
 </ul>
 <div class="container">
   <form #ajouterUnScore="ngForm" id="ajouterUnScore" (ngSubmit)="onAdd();">
   <mat-form-field>
     <input matInput placeholder="Score" [(ngModel)]="monScore" [ngModelOptions]="{standalone: true}" >
-    <!-- <mat-error *ngIf="score.invalid && (nom.dirty || nom.touched) && nom.hasError('minlength')">Ne peut contenir que des chiffres</mat-error> -->
     <button matSuffix  type="submit" mat-icon-button color="primary" [disabled]="!ajouterUnScore.form.valid"><i class="material-icons">add</i></button>
   </mat-form-field>
   </form>

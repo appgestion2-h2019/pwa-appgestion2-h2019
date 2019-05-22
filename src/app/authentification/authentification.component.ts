@@ -12,7 +12,7 @@ export class AuthentificationComponent implements OnInit {
 
     constructor() {
         this.usager.id = 1;
-        this.usager.nomUsager = 'Dannick';
+        this.usager.nomusager = 'Dannick';
         this.usager.courriel = 'dannickbedard@gmail.com';
         this.usager.motdepasse = 'qwerty1234';
         this.usager.admin = false;

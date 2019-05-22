@@ -137,8 +137,7 @@ const appRoutes: Routes = [
       PopupConsultationComponent,
       AffichageFinalComponent,
     ],
-    providers: [ SalleService, JeuxService, GoogleService],
-    providers: [ SalleService, JeuxService, MessagerieService, UsagerService],
+    providers: [ SalleService, JeuxService, MessagerieService, GoogleService, UsagerService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

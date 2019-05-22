@@ -20,7 +20,10 @@ export class MotsComponent implements OnInit {
     this.jeuxService.getCategories()
         .subscribe(resultat => this.categories = resultat);
   }
-
+  onDelete(categorie: Categorie): void {
+    this.jeuxService.deleteCategorie(categorie)
+        .subscribe(result => this.categories = this.categories.filter(h => h !== categorie));
+  }
   ngOnInit() {
     this.getCategories();
   }

@@ -1,29 +1,14 @@
-
-<form method="post" action="">
-  <!--<label for="nom">*Catégorie: </label>-->
-  <!--<input type="Text" class="form-control" id="nom" placeholder="Catégorie" maxlength="40" required name="categorie">-->
-  <h4>Ajouter un mot</h4>
-  <mat-form-field>
-    <mat-label>Catégorie</mat-label>
-    <mat-select matNativeControl [(ngModel)]="selectedCategorie" name="categorie" required>
-      <mat-option *ngFor="let cat of categories" [value]="cat.titre">
-        {{cat.titre}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <mat-label>Niveau de difficulté</mat-label>
-    <select matNativeControl [(ngModel)]="selectedNiveau" name="niveau" required>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-    </select>
-  </mat-form-field>
-  <br>
-
-  <input type="text" value="Mot"> <br> <br>
+<h2>Supression de catégories</h2>
+<mat-grid-list cols="2" *ngFor="let categorie of categories" >
+  <mat-grid-tile colspan="1" >
+    {{categorie.titre}}
+  </mat-grid-tile>
+  <mat-grid-tile colspan="1">
+    <form (ngSubmit)="onDelete(categorie)">
+      <button mat-raised-button color="primary" >Supprimer</button>
+    </form>
+  </mat-grid-tile>
+</mat-grid-list>
 
 
-  <input type="submit" class="btn btn-primary" value="Ajouter">
-</form>
+

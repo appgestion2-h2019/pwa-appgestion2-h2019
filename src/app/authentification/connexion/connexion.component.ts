@@ -19,6 +19,7 @@ export class ConnexionComponent implements OnInit {
     }
 
     getCourriel(): void {
+        console.log('Entre dans le getCourriel');
         this.courrielService.getUsager().subscribe(resultat => this.usager = resultat);
     }
 

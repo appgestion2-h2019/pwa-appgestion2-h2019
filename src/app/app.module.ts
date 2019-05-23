@@ -49,8 +49,6 @@ import {AffichageFinalComponent} from './jeux/affichage-final/affichage-final.co
 import {FormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { GoogleService } from './google.service';
-import { AfficherPictoComponent } from './pictos/afficher-picto/afficher-picto.component';
-import { AjouterPictoComponent } from './pictos/ajouter-picto/ajouter-picto.component';
 import {AfficherPictoComponent} from './pictos/afficher-picto/afficher-picto.component';
 import {AjouterPictoComponent} from './pictos/ajouter-picto/ajouter-picto.component';
 import {MessagerieService} from './messagerie.service';
@@ -58,7 +56,7 @@ import {GravatarComponent} from './authentification/gravatar/gravatar.component'
 import {UsagerService} from './authentification/usager.service';
 import {CourrielComponent} from './authentification/courriel/courriel.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {CourrielService} from "./courriel.service";
+import {CourrielService} from './courriel.service';
 import { ConnexionComponent } from './authentification/connexion/connexion.component';
 
 const appRoutes: Routes = [

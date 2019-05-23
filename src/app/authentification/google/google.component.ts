@@ -3,7 +3,6 @@ import { Usager } from '../usager';
 import { GoogleService } from '../../google.service';
 
 declare function signOut(): any;
-// declare function onSignIn();
 declare function returnPorfile(): any;
 
 @Component({
@@ -15,9 +14,8 @@ export class GoogleComponent implements OnInit {
 
   usager: Usager[];
   newUsager: Usager;
-
+  public pasconnecter: boolean;
   onSignIn(googleUser) {
-    console.log("allo1");
     this.newUsager = new Usager();
     ((u, p) => {
       // u.id = p.getId();
@@ -28,17 +26,21 @@ export class GoogleComponent implements OnInit {
         // u.familyName    = p.getFamilyName();
     })(this.newUsager, googleUser.getBasicProfile());
     console.log(this.newUsager);
+    this.pasconnecter = false;
     this.onAdd();
   }
   constructor(private googleService: GoogleService) { }
 
   ngOnInit() {
-    this.getUsager();
-    this.newUsager = new Usager();
+    // this.getUsager();
+    // this.newUsager = new Usager();
     // this.newUsager.nomusager = 'Sam1';
     // this.newUsager.googlecourriel = 'sam@gmail.com';
   }
-  signOut() {
+  // signOut() {
+  // }
+  signOutButton(): void {
+      this.pasconnecter = true;
   }
   getUsager(): void {
     this.googleService.getUsager().subscribe(resultat => this.usager = resultat);

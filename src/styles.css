@@ -42,7 +42,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .confirm-dialog-container #yes-button{
     height: 50px;
     width: 50%;
-    background-color: #283593;
+    background-color: #b6bece;
     color:white;
     border-radius: 0px;
 }

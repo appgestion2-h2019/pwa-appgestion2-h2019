@@ -58,6 +58,7 @@ import {CourrielComponent} from './authentification/courriel/courriel.component'
 import {ReactiveFormsModule} from '@angular/forms';
 import {CourrielService} from './courriel.service';
 import { ConnexionComponent } from './authentification/connexion/connexion.component';
+import { MatConfirmDialogComponent } from './jeux/mat-confirm-dialog/mat-confirm-dialog.component';
 
 const appRoutes: Routes = [
     {path: 'accueil', component: AuthentificationComponent},
@@ -105,6 +106,7 @@ const appRoutes: Routes = [
         GravatarComponent,
         CourrielComponent,
         ConnexionComponent,
+        MatConfirmDialogComponent,
     ],
     imports: [
         RouterModule.forRoot(
@@ -139,12 +141,14 @@ const appRoutes: Routes = [
         PopupCreationComponent,
         PopupModificationComponent,
         PopupConsultationComponent,
+        MatDialogModule
     ],
     entryComponents: [
         PopupCreationComponent,
         PopupModificationComponent,
         PopupConsultationComponent,
         AffichageFinalComponent,
+        MatConfirmDialogComponent
     ],
     providers: [ SalleService, JeuxService, MessagerieService, GoogleService, UsagerService, CourrielService],
     bootstrap: [AppComponent]

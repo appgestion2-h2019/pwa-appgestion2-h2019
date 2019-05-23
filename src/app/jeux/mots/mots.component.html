@@ -1,7 +1,15 @@
-<mat-grid-list cols="1" rowHeight="15:1" *ngFor="let categorie of categories">
-  <mat-grid-tile> {{categorie.titre}}
+<h2>Supression de catégories</h2>
+<mat-grid-list cols="2" rowHeight="100px" *ngFor="let categorie of categories">
+  <mat-grid-tile  colspan="1" >
+    {{categorie.titre}}
+  </mat-grid-tile>
+  <mat-grid-tile class="titres" colspan="1">
     <form (ngSubmit)="onDelete(categorie)">
-      <button mat-button >Supprimer</button>
+      <button mat-raised-button color="primary" >Supprimer</button>
     </form>
   </mat-grid-tile>
 </mat-grid-list>
+
+
+
+

@@ -48,6 +48,7 @@ import {DevinerDessinsComponent} from './jeux/deviner-dessins/deviner-dessins.co
 import {AffichageFinalComponent} from './jeux/affichage-final/affichage-final.component';
 import {FormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { GoogleService } from './google.service';
 import {AfficherPictoComponent} from './pictos/afficher-picto/afficher-picto.component';
 import {AjouterPictoComponent} from './pictos/ajouter-picto/ajouter-picto.component';
 import {MessagerieService} from './messagerie.service';
@@ -55,8 +56,9 @@ import {GravatarComponent} from './authentification/gravatar/gravatar.component'
 import {UsagerService} from './authentification/usager.service';
 import {CourrielComponent} from './authentification/courriel/courriel.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {CourrielService} from "./courriel.service";
+import {CourrielService} from './courriel.service';
 import { ConnexionComponent } from './authentification/connexion/connexion.component';
+import { MatConfirmDialogComponent } from './jeux/mat-confirm-dialog/mat-confirm-dialog.component';
 
 const appRoutes: Routes = [
     {path: 'accueil', component: AuthentificationComponent},
@@ -68,6 +70,7 @@ const appRoutes: Routes = [
     {path: 'pictos', component: PictosComponent},
     {path: 'jeux', component: FormulaireJeuComponent},
     {path: 'jeux', component: AffichageFinalComponent},
+    {path: 'jeux/supprimerCategorie', component: MotsComponent},
     {
         path: '',
         redirectTo: '/accueil',
@@ -103,6 +106,7 @@ const appRoutes: Routes = [
         GravatarComponent,
         CourrielComponent,
         ConnexionComponent,
+        MatConfirmDialogComponent,
     ],
     imports: [
         RouterModule.forRoot(
@@ -137,14 +141,16 @@ const appRoutes: Routes = [
         PopupCreationComponent,
         PopupModificationComponent,
         PopupConsultationComponent,
+        MatDialogModule
     ],
     entryComponents: [
         PopupCreationComponent,
         PopupModificationComponent,
         PopupConsultationComponent,
         AffichageFinalComponent,
+        MatConfirmDialogComponent
     ],
-    providers: [SalleService, JeuxService, MessagerieService, UsagerService, CourrielService],
+    providers: [ SalleService, JeuxService, MessagerieService, GoogleService, UsagerService, CourrielService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

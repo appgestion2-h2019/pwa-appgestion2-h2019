@@ -1,6 +1,11 @@
 <meta name="google-signin-client_id" content="432138802367-trj5bj7rlsergiponmunrqdsuf4b53bp.apps.googleusercontent.com">
+<!--<li *ngFor="let usager of usager">-->
+  <!--<span class="badge">{{usager.id}}</span> {{usager.nomusager}}-->
+<!--</li>-->
 <div class="row">
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-    <button onclick="signOut()">Sign out</button>
+    <div id="googlebutton" class="g-signin2" data-onsuccess="onSignIn"></div>
+    <!--<button class="btn btn-primary" (click)="signOutButton" onclick="signOut()">Déconnexion2</button>-->
+    <div *ngIf="!pasconnecter">
+        <button class="btn btn-primary" (click)="signOutButton()" onclick="signOut()">Déconnexion</button>
+    </div>
 </div>

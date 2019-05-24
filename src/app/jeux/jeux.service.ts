@@ -17,23 +17,44 @@ export class JeuxService {
 
   constructor(private http: HttpClient) { }
 
-  //Affichage des catégories
-  getCategories() : Observable<Categorie[]> {
+  // Ajout de catégories
+  addCategorie(categorie: Categorie): Observable<Categorie> {
+    return this.http.post<Categorie>(this.jeuxUrl + '/', categorie, httpOptions);
+  }
+
+  // Affichage des catégories
+  getCategories(): Observable<Categorie[]> {
   return this.http.get<Categorie[]>(this.jeuxUrl);
   }
 
-  //Ajouter un score
-
-  addScore (score: Score): Observable<Score> {
-      console.log(score.score);
-        return this.http.post<Score>(this.jeuxUrl +'/score', score, httpOptions);
+  // Ajouter un score
+  addScore(score: Score): Observable<Score> {
+        return this.http.post<Score>(this.jeuxUrl + '/score', score, httpOptions);
   }
 
-  //Affichage de tous les scores.
-  getScore() : Observable<Score[]> {
+  // Affichage de tous les scores.
+  getScore(): Observable<Score[]> {
   return this.http.get<Score[]>(this.jeuxUrl);
   }
 
+  // Ajouter un mot
+  addMot(mot: Categorie): Observable<Categorie> {
+    return this.http.post<Categorie>(this.jeuxUrl + '/mot', mot, httpOptions);
+  }
+  deleteCategorie(categorie: Categorie | number): Observable<Categorie> {
+    const id = typeof categorie === 'number' ? categorie : categorie._id;
+    const url = `${this.jeuxUrl}/${id}`;   // ajouter l'id à l'URL de base
 
+    return this.http.delete<Categorie>(url, httpOptions);
+  }
 
+  // NL
+  deleteMot(categorie: Categorie | number, mot: {nom: string, niveau: number} | string): Observable<Categorie> {
+    const id = typeof categorie === 'number' ? categorie : categorie._id;
+    const nomMot = typeof mot === 'string' ? mot : mot.nom;
+    const url = this.jeuxUrl + '/' + id + '/mot';
+
+    console.log('Suppression de ' + nomMot + ' à ' + url);
+    return this.http.put<Categorie>(url, nomMot, httpOptions);
+  }
 }

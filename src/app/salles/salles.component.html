@@ -6,15 +6,19 @@
           <mat-card-title>Chicken Coops</mat-card-title>
           <mat-card-subtitle>Salles de conversation</mat-card-subtitle>
         </mat-card-header>
-    
+
         <mat-card-content>
           <app-filtre [instanceof_salles]="salles_instance"></app-filtre>
         </mat-card-content>
-    
+
         <mat-card-content>
+          <button mat-raised-button (click)="terminerPartie()">
+              <mat-label>Terminer la partie</mat-label>
+              <mat-icon aria-label="Icône pour terminer la partie">close</mat-icon>
+          </button>
           <app-options [instanceof_salles]="salles_instance"></app-options>
         </mat-card-content>
-    
+
         <mat-card-content>
             <div class="salles-scrollable">
                 <app-salle *ngFor="let salle of salles" [Salle]="salle" (click)="ouvrirSalle(salle)"></app-salle>

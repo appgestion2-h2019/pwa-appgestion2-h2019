@@ -27,6 +27,7 @@ export class JeuxService {
   return this.http.get<Categorie[]>(this.jeuxUrl);
   }
 
+////////////   Lisa   /////////////////////////////
   // Ajouter un score
   addScore(score: Score): Observable<Score> {
         return this.http.post<Score>(this.jeuxUrl + '/score', score, httpOptions);
@@ -36,7 +37,7 @@ export class JeuxService {
   getScore(): Observable<Score[]> {
   return this.http.get<Score[]>(this.jeuxUrl);
   }
-
+///////////////////////////////////////////////////
   // Ajouter un mot
   addMot(mot: Categorie): Observable<Categorie> {
     return this.http.post<Categorie>(this.jeuxUrl + '/mot', mot, httpOptions);

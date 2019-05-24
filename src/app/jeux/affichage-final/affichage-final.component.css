@@ -1,7 +1,7 @@
 
 
 table.tableauScore {
-  width: 100%;
+  width: 75%;
   margin-top: 50px;
 }
 form{
@@ -51,7 +51,7 @@ dl, ol, ul {
 
 .mat-form-field {
     text-align: left;
-    width: 75%;
+    width: auto;
     margin-top: 40px;
 
 }

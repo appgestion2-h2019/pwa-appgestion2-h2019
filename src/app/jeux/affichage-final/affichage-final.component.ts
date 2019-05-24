@@ -23,22 +23,21 @@ export class AffichageFinalComponent implements OnInit {
      this.jeuxService.getScore()
          .subscribe(resultat => this.scores = resultat);
  }
-close(){
-  this.close();
-}
-
 
  //Fonction pour ajouter un score.
  onAdd() {
    console.log(this.monScore);
    this.nouveauScore.score = this.monScore;
    this.jeuxService.addScore(this.nouveauScore).subscribe();
+   //Rappelle ma fonction getScore pour l'affichage tout de suite après l'ajout.
    this.getScore();
  }
 
   ngOnInit() {
       console.log('in ngOnInit');
+      //Instancie un nouveau score
       this.nouveauScore = new Score();
+      this.nouveauScore.score = null;
       this.getScore();
   }
 }

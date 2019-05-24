@@ -48,5 +48,13 @@ export class JeuxService {
     return this.http.delete<Categorie>(url, httpOptions);
   }
 
+  // NL
+  deleteMot(categorie: Categorie | number, mot: {nom: string, niveau: number} | string): Observable<Categorie> {
+    const id = typeof categorie === 'number' ? categorie : categorie._id;
+    const nomMot = typeof mot === 'string' ? mot : mot.nom;
+    const url = this.jeuxUrl + '/' + id + '/mot';
 
+    console.log('Suppression de ' + nomMot + ' à ' + url);
+    return this.http.put<Categorie>(url, nomMot, httpOptions);
+  }
 }

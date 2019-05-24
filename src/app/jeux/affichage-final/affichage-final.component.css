@@ -1,6 +1,70 @@
 table {
   width: 100%;
 }
-mat-form-field.mat-form-field {
+/* mat-form-field.mat-form-field {
   text-align: center;
+} */
+table {
+  width: 100%;
+}
+form{
+  width: 30%;
+}
+table.tableauScore {
+  border: 1px solid #D8D8D8;
+  background-color: #FFFFFF;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.tableauScore td, table.tableauScore th {
+  border: 0px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.tableauScore tbody td {
+  font-size: 15px;
+}
+table.tableauScore tr:nth-child(even) {
+  background: #CDD8FF;
+}
+table.tableauScore thead {
+  background: #3F51B5;
+  background: -moz-linear-gradient(top, #6f7cc7 0%, #5262bc 66%, #3F51B5 100%);
+  background: -webkit-linear-gradient(top, #6f7cc7 0%, #5262bc 66%, #3F51B5 100%);
+  background: linear-gradient(to bottom, #6f7cc7 0%, #5262bc 66%, #3F51B5 100%);
+  border-bottom: 2px solid #444444;
+}
+table.tableauScore thead th {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #FEFEFE;
+}
+table.tableauScore thead th:first-child {
+  border-left: none;
+}
+
+table.tableauScore tfoot {
+  font-size: 11px;
+  font-weight: normal;
+  color: #FFFFFF;
+  background: #FFFFFF;
+  background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
+  background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 66%, #FFFFFF 100%);
+  border-top: 3px solid #3F51B5;
+}
+table.tableauScore tfoot td {
+  font-size: 11px;
+}
+table.tableauScore tfoot .links {
+  text-align: right;
+}
+table.tableauScore tfoot .links a{
+  display: inline-block;
+  background: #3F51B5;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
 }

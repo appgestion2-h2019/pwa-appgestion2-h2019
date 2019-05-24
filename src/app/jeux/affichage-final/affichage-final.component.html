@@ -1,29 +1,45 @@
 <mat-card-title>Meilleurs scores</mat-card-title>
-<ul class="scores">
+<div class="container">
+  <div class="row">
+        <ul class="scores">
     <!-- Tableau d'affiche pour les meilleurs scores avec le material -> Mat Table de Angular. -->
-    <table>
-      <thead>
-        <tr>
-          <th> Usagers</th>
-          <th> Score </th>
-          <th> Partager <th>
-        </tr>
-      </thead>
+          <table class="tableauScore">
+            <tfoot>
+              <tr>
+                <td colspan="3">
+                  <div class="links"><a href="#">&laquo;</a> <a class="active" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a></div>
+                </td>
+              </tr>
+            </tfoot>
+            <thead>
+              <tr>
+                <th> Usagers</th>
+                <th> Score </th>
+                <th> Partager <th>
+              </tr>
+          </thead>
       <tbody>
           <!-- //Rajouter -> (click)="onSelect(s) [class.selected]="s === selectedScore" après le ngFor pour avoir le choix de sélectionner. -->
-        <tr *ngFor="let s of scores">
+        <tr *ngFor="let s of scores" class="colonnes">
           <td>{{s.usager_id}}</td>
           <td>{{s.score}}</td>
+          <!-- //Bouton de partage vers Facebook avec un iFrame. -->
+          <td><iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A4200&layout=button_count&size=small&width=80&height=20&appId" width="80" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe></td>
         </tr>
       </tbody>
     </table>
-    <!-- <span class="badge"></span> {{s.score}} -->
-</ul>
-<div class="container">
-  <form #ajouterUnScore="ngForm" id="ajouterUnScore" (ngSubmit)="onAdd();">
-  <mat-form-field>
-    <input matInput placeholder="Score" [(ngModel)]="monScore" [ngModelOptions]="{standalone: true}" >
-    <button matSuffix  type="submit" mat-icon-button color="primary" [disabled]="!ajouterUnScore.form.valid"><i class="material-icons">add</i></button>
+
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+    <form #ajouterUnScore="ngForm" id="ajouterUnScore" (ngSubmit)="onAdd();">
+  <mat-form-field hintLabel="*Chiffres uniquement">
+    <input matInput #input maxlength="6" placeholder="Entrez votre meilleur score!" name="score" type="number" [(ngModel)]="monScore">
+        <button matSuffix  type="submit" mat-icon-button color="primary" ><i class="material-icons addbox">add_box</i></button>
+    <mat-hint align="end">{{input.value?.length || 0}}/6</mat-hint>
   </mat-form-field>
   </form>
-</div>
+  </div>
+  </div>

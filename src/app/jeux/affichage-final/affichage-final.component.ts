@@ -13,7 +13,7 @@ export class AffichageFinalComponent implements OnInit {
 
   scores: Score[];
   nouveauScore : Score;
-  monScore : number;
+  monScore : number = null;
 
   // selectedScore: Score;
 

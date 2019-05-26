@@ -16,25 +16,35 @@ export class CourrielComponent implements OnInit {
 
     // usagerText = String;
     usager: Usager[];
+    newUsager: Usager;
 
     constructor(private formBuilder: FormBuilder, private courrielService: CourrielService) {
     }
 
-    getCourriel(): void {
-        this.courrielService.getUsager().subscribe(resultat => this.usager = resultat);
+    createUser(): void {
+        this.newUsager = new Usager();
+        ((u, p) => {
+            // u.id = p.getId();
+            u.nomusager = p.nomusager;
+            u.courriel = p.courriel;
+            u.motdepasse = p.motdepasse;
+        })(this.newUsager, this.creationCompteForm.value);
+
+        this.courrielService.addUsagerCourriel(this.newUsager).subscribe();
+
+        alert(this.newUsager);
+        console.log(this.newUsager)
     }
 
     ngOnInit() {
-
-
         this.creationCompteForm = this.formBuilder.group({
             nomusager: ['', [Validators.required]],
             courriel: ['', [Validators.required, Validators.email]],
             motdepasse: ['', [Validators.required, Validators.minLength(6)]],
             confirmMotdepasse: ['', Validators.required]
         }, {
-            //todo Trouver comment fontionne le MustMatch
 
+            //todo Trouver comment fontionne le MustMatch
             // validator: MustMatch('motdepasse', 'confirmMotdepasse')
         });
     }
@@ -49,7 +59,7 @@ export class CourrielComponent implements OnInit {
         if (this.creationCompteForm.invalid) { // Si le formulaire n'est pas valide
             return;
         } else {
-            alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.creationCompteForm.value))
+            this.createUser();
         }
     }
 }

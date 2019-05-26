@@ -59,6 +59,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CourrielService} from './courriel.service';
 import { ConnexionComponent } from './authentification/connexion/connexion.component';
 import { MatConfirmDialogComponent } from './jeux/mat-confirm-dialog/mat-confirm-dialog.component';
+import { CookieService } from "angular2-cookie/services/cookies.service";
 
 const appRoutes: Routes = [
     {path: 'accueil', component: AuthentificationComponent},
@@ -150,7 +151,7 @@ const appRoutes: Routes = [
         AffichageFinalComponent,
         MatConfirmDialogComponent
     ],
-    providers: [ SalleService, JeuxService, MessagerieService, GoogleService, UsagerService, CourrielService],
+    providers: [ SalleService, JeuxService, MessagerieService, GoogleService, UsagerService, CourrielService, CookieService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

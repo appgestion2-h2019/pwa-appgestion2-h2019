@@ -17,12 +17,12 @@ export class CourrielService {
 
   // Vas chercher les usagés
     //todo allez cherchez pas courriel
-  getUsager(): Observable<Usager[]> {
-    return this.http.get<Usager[]>(this.usagerUrl);
+  connexionUsager(usager : Usager): Observable<Usager[]> {
+    return this.http.post<Usager[]>(this.usagerUrl + 'connexion/', usager, httpOptions);
   }
 
   // Ajoute un usager qui a été créer manuellement
-  addUsagerCourriel(usager : Usager): Observable<Usager[]> {
-      return this.http.post<Usager[]>(this.usagerUrl + 'courriel/' , usager, httpOptions);
+  addUsagerCourriel(usager : Usager): Observable<Usager> {
+      return this.http.post<Usager>(this.usagerUrl , usager, httpOptions);
   }
 }

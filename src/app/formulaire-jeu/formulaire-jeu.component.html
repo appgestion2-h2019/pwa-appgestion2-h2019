@@ -4,8 +4,8 @@
     <h4>Créez un jeu</h4>
     <mat-form-field>
         <mat-label>Catégorie</mat-label>
-        <mat-select matNativeControl [(ngModel)]="selectedCategorie" name="categorie" required>
-            <mat-option *ngFor="let cat of categories" [value]="cat.titre">
+        <mat-select matNativeControl [(ngModel)]="selectedCategorieNom" name="categorie" required>
+            <mat-option *ngFor="let cat of categories" [value]="cat.titre" (click)="onSelect(cat)">
                 {{cat.titre}}
             </mat-option>
         </mat-select>
@@ -20,12 +20,28 @@
         </select>
     </mat-form-field>
 <br>
-    <p> Catégorie choisie: {{selectedCategorie}} </p>
+    <p> Catégorie choisie: {{selectedCategorieNom}} </p>
     <p> Niveau choisi: {{selectedNiveau}} </p>
-
-
 </form>
 
+<!-- NL Start -->
+<mat-table *ngIf="selectedCategorie != undefined && selectedNiveau != undefined" [dataSource]="selectedCategorie.mot" class="mat-elevation-z8">
+    <ng-container matColumnDef="nom">
+        <th mat-header-cell *matHeaderCellDef> Nom </th>
+        <td mat-cell *matCellDef="let mot"> {{mot.nom}} </td>
+    </ng-container>
+    <ng-container matColumnDef="niveau">
+        <th mat-header-cell *matHeaderCellDef> Niveau </th>
+        <td mat-cell *matCellDef="let mot"> {{mot.niveau}} </td>
+    </ng-container>
+    <ng-container matColumnDef="supprimer">
+        <th mat-header-cell *matHeaderCellDef> X </th>
+        <td mat-cell *matCellDef="let mot"><button (click)="onDeleteMot(selectedCategorie,mot.nom)">X</button></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="['nom', 'niveau', 'supprimer']"></tr>
+    <tr mat-row *matRowDef="let mot; columns: ['nom', 'niveau', 'supprimer'];"></tr>
+</mat-table>
+<!-- NL End -->
 
 <form #heroFormAjout="ngForm" id="categorieFormAjout" (ngSubmit)="onAdd();" >
     <h4>Ajouter une catégorie</h4>

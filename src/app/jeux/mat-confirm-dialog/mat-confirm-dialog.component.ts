@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-
+// https://github.com/CodAffection/Angular-Material-Confirm-Dialog/tree/master/CompleteAngularMaterialApp
 @Component({
   selector: 'app-mat-confirm-dialog',
   templateUrl: './mat-confirm-dialog.component.html',

@@ -4,6 +4,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Je n'ai pas été capable de faire fonctionner le css à partir de mon component. Marc-Antoine Grenier  */
+/* https://github.com/CodAffection/Angular-Material-Confirm-Dialog/tree/master/CompleteAngularMaterialApp */
 .btn-dialog-close{
     width: 45px;
     min-width: 0px !important;
@@ -41,7 +42,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .confirm-dialog-container #yes-button{
     height: 50px;
     width: 50%;
-    background-color: #283593;
+    background-color: #b6bece;
     color:white;
     border-radius: 0px;
 }

@@ -5,6 +5,7 @@ import {MatConfirmDialogComponent} from './mat-confirm-dialog/mat-confirm-dialog
 @Injectable({
   providedIn: 'root'
 })
+// https://github.com/CodAffection/Angular-Material-Confirm-Dialog/tree/master/CompleteAngularMaterialApp
 export class DialogService {
 
   constructor(private dialog: MatDialog) { }

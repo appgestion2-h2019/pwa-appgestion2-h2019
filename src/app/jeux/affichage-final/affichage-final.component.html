@@ -1,15 +1,38 @@
-<mat-card-title>Meilleurs scores</mat-card-title>
-<ul class="scores">
-  <li *ngFor="let s of scores" (click)="onSelect(s)"[class.selected]="s === selectedScore">
-    <span class="badge"></span> {{s.score}}
-  </li>
-</ul>
+<mat-card-title class="titre">Meilleurs scores</mat-card-title>
 <div class="container">
-  <form #ajouterUnScore="ngForm" id="ajouterUnScore" (ngSubmit)="onAdd();">
-  <mat-form-field>
-    <input matInput placeholder="Score" [(ngModel)]="monScore" [ngModelOptions]="{standalone: true}" >
-    <!-- <mat-error *ngIf="score.invalid && (nom.dirty || nom.touched) && nom.hasError('minlength')">Ne peut contenir que des chiffres</mat-error> -->
-    <button matSuffix  type="submit" mat-icon-button color="primary" [disabled]="!ajouterUnScore.form.valid"><i class="material-icons">add</i></button>
-  </mat-form-field>
-  </form>
+  <div class="row">
+        <ul class="scores">
+    <!-- Tableau d'affiche pour les meilleurs scores avec le material -> Mat Table de Angular. -->
+          <table class="tableauScore">
+            <thead>
+              <tr>
+                <th> Usagers</th>
+                <th> Score </th>
+              </tr>
+          </thead>
+      <tbody>
+        <!-- Boucle parmis les résultats de ma requête pour afficher tous les scores présents dans la base de données. L'index remplace les usagers pour l'instant. -->
+        <tr *ngFor="let s of scores; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{s.score}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <!-- Formulaire d'ajout pour un score par un utilisateur. Lorsqu'il est "submit" la fonction onAdd() de mon .ts est appelée. -->
+      <form #ajouterUnScore="ngForm" id="ajouterUnScore" (ngSubmit)="onAdd(score);">
+    <!-- Validation et indication côté client. -->
+    <mat-form-field hintLabel="*Chiffres uniquement">
+      <input matInput #input maxlength="6" placeholder="Entrez votre meilleur score!" name="score" type="number" [(ngModel)]="monScore">
+          <button matSuffix  type="submit" mat-icon-button color="primary" ><i class="material-icons addbox">add_box</i></button>
+      <mat-hint align="end">{{input.value?.length || 0}}/6</mat-hint>
+    </mat-form-field>
+    </form>
+    </div>
+    <div class="row">
+          <!-- //Bouton de partage vers Facebook avec un iFrame. -->
+          <iframe class="boutonPartager" src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%3A4200%2Fsalles&layout=button&size=large&width=89&height=28&appId" width="89" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        </div>
+    </ul>
+  </div>
 </div>
